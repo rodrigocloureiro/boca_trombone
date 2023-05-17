@@ -1,0 +1,100 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  column-gap: 10px;
+  padding: 20px 20px;
+}
+
+.reclamacao_section {
+  max-width: 880px;
+  width: 95%;
+  background-color: #fff;
+  margin: 70px 0;
+  padding: 50px 20px 20px 20px;
+  border-radius: 10px;
+}
+
+.reclamacao_section h2 {
+  color: #4b5963;
+  margin: 0 0 10px 0;
+  font-size: 2em;
+  text-align: center;
+}
+
+.reclamacao_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.reclamacao_form input {
+  margin: 5px 0;
+}
+
+.reclamacao_form input,
+.list_options,
+.claim_ipt {
+  width: 100%;
+  height: 30px;
+  padding: 0 5px;
+  border: none;
+  border-bottom: 1px solid #000;
+  font-size: 16px;
+  background-color: transparent;
+}
+
+.reclamacao_form input:focus,
+.list_options:focus {
+  outline: none;
+}
+
+.reclamacao_form input:focus {
+  border-left: 1px solid #000;
+}
+
+.claim_ipt {
+  height: 200px;
+}
+
+.claim_ipt:focus {
+  border-left: 1px solid #000;
+  outline: none;
+}
+
+.claim_btn {
+  border-radius: 10px;
+  padding: 10px 20px;
+  background-color: #3e6990;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 500;
+  margin: 10px 0 0 0;
+}
+
+.claim_btn:hover {
+  text-decoration: underline;
+  background-color: #3e6990cc;
+  cursor: pointer;
+}
+
+.warning {
+  display: block !important;
+  color: #ff0000;
+  border-bottom: 1px solid #ff0000;
+}
+
+.warning::placeholder {
+  color: #ff0000;
+}
+
+@media (min-width: 1200px) {
+  .reclamacao_form input,
+  .list_options,
+  .claim_ipt {
+    max-width: 50%;
+    width: 50%;
+  }
+}

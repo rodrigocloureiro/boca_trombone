@@ -1,0 +1,146 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  column-gap: 10px;
+  padding: 20px 20px;
+}
+
+.company_info {
+  max-width: 400px;
+  width: 95%;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.company_info .company_info__top,
+.company_info .company_info__content,
+.company_info div div.company_info__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.company_info__top p span {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.company_info__range {
+  width: 95%;
+  height: 15px;
+  background: #f2f2f8;
+  border-radius: 20px;
+  margin: 0px 8px 0px 0px;
+}
+
+.bar {
+  height: 15px;
+  background-color: #7bba48;
+  border-radius: inherit;
+}
+
+.help_area {
+  width: 100%;
+  margin: 20px 0 0 0;
+}
+
+.info_area .help_area .help_btn {
+  background-color: transparent;
+  border: 1px solid #ff0000;
+  color: #ff0000;
+  text-align: center;
+  text-decoration: none;
+  transition: .5s;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 95%;
+  display: inline-block;
+}
+
+.info_area .help_area .help_btn:hover {
+  background-color: #ff9e9e;
+}
+
+.historic_company_section {
+  max-width: 880px;
+  width: 95%;
+  background-color: #fff;
+  margin: 70px 0;
+  padding: 50px 20px 20px 20px;
+  border-radius: 10px;
+}
+
+h1,
+h2 {
+  color: #4b5963;
+  margin: 5px 0;
+}
+
+.historic_company_section h1 {
+  font-size: 26px;
+  text-align: center;
+}
+
+.historic_company {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.historic_company img {
+  width: 25px;
+}
+
+.claims_list {
+  list-style: none;
+}
+
+.claims_list li p:nth-child(1) {
+  margin: 5px 0 0 0;
+}
+
+.claims_list li {
+  margin: 10px 0;
+  border-bottom: 1px solid #bbb;
+}
+
+.historic_company_section .claims_list li p:not(:first-child) {
+  text-align: end;
+}
+
+.claim {
+  word-wrap: break-word;
+}
+
+.warning {
+  font-weight: bold;
+  font-size: 28px;
+  text-align: center;
+  color: #f96f24ff;
+}
+
+@media (min-width: 450px) {
+  .company_info {
+    max-width: 880px;
+  }
+  .historic_company_section h1 {
+    font-size: 2em;
+  }
+  .historic_company {
+    flex-direction: row;
+    column-gap: 10px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .company_info {
+    max-width: 400px;
+  }
+  .historic {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
