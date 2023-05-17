@@ -1,10 +1,10 @@
 import style from './Historico.module.css';
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
-import bom from '../assets/bom.png';
-import otimo from '../assets/otimo.png';
-import ruim from '../assets/ruim.png';
-import naorecomendada from '../assets/nao_recomendada.png';
+import bom from '../assets/images/bom.png';
+import otimo from '../assets/images/otimo.png';
+import ruim from '../assets/images/ruim.png';
+import naorecomendada from '../assets/images/nao_recomendada.png';
 
 class Historico extends Component {
   constructor(props) {
@@ -21,6 +21,7 @@ class Historico extends Component {
     };
   }
 
+  // Carrega informações da empresa selecionada ao ser montado
   componentDidMount() {
     const { empresas, empresa } = this.props;
 
@@ -40,7 +41,8 @@ class Historico extends Component {
     });
   };
 
-  componentDidUpdate(prevProps, prevState) {
+  // Carrega as informações da empresa selecionada ao ser atualizado
+  componentDidUpdate(prevProps) {
     const { empresas, empresa } = this.props;
     
     if (prevProps.empresa !== empresa) {
@@ -63,9 +65,9 @@ class Historico extends Component {
   
   render() {
     const { nome, reclamacoes, logo, resolvidas, percResolvidas, abertas, percAbertas, cnpj } = this.state;
-    const { empresa, logado } = this.props;
+    const { logado } = this.props;
+    // Define a imagem que será exibida no perfil da empresa de acordo com o percentual de reclamações resolvidas
     const status = percResolvidas > 90 ? otimo : percResolvidas <= 90 && percResolvidas > 60 ? bom : percResolvidas >= 50 && percResolvidas <= 60 ? ruim : percResolvidas < 50 && reclamacoes.length > 0 ? naorecomendada : otimo;
-    const date = new Date().getTime();
 
     return (
       <main>

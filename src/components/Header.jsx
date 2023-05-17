@@ -1,7 +1,6 @@
-import logotipo from '../../src/assets/logo.png';
-import menuImg from '../../src/assets/list.svg';
-import buscarImg from '../../src/assets/search.svg';
-import Button from './Button';
+import logotipo from '../../src/assets/images/logo.png';
+import menuImg from '../../src/assets/images/list.svg';
+import buscarImg from '../../src/assets/images/search.svg';
 import Input from './Input';
 import { Link } from 'react-router-dom';
 import { Component } from 'react';
@@ -47,8 +46,6 @@ class Header extends Component {
               <ul>
   
                 <li>
-  
-                  {/* <Button divClass='btn_area' btnClass='btn_signup' title='Cadastrar' text='Cadastrar' /> */}
 
                   <Link to='/signup' className='btn_signup' title='Cadastre-se'>Cadastre-se</Link>
   
@@ -93,8 +90,6 @@ class Header extends Component {
                   <>
       
                     <div className='signup-area'>
-      
-                      {/* <Button divClass='btn_area' btnClass='btn_signup' title='Cadastrar' text='Cadastrar' /> */}
 
                       <Link to='/signup' className='btn_signup' title='Cadastre-se'>Cadastre-se</Link>
       

@@ -1,4 +1,4 @@
-import buscarImg from '../../src/assets/search.svg';
+import buscarImg from '../../src/assets/images/search.svg';
 import Input from './Input';
 import { Link } from 'react-router-dom';
 import { Component } from 'react';
@@ -11,9 +11,9 @@ class Content extends Component {
     };
   }
 
+  // Calcula o percentual das reclamações resolvidas e adiciona como proprieade no estado ranking assim que montado
   componentDidMount() {
     const { ranking } = this.state;
-    const { empresas } = this.props;
 
     ranking.map(item => {
       let percentual = 0;
@@ -29,6 +29,7 @@ class Content extends Component {
     this.setState({ ranking: ranking });
   }
 
+  // Remove o evento keydown quando o componente é desmontado
   componentWillUnmount() {
     const { handleNavigateSuggestions } = this.props;
     document.querySelector('#find').removeEventListener('keydown', handleNavigateSuggestions);
@@ -36,7 +37,7 @@ class Content extends Component {
 
   render() {
     const { ranking } = this.state;
-    const { handleSuggestions, event, logado, definicao, handleSelectedCompany, handleNavigateSuggestions } = this.props;
+    const { handleSuggestions, event, logado, definicao, handleNavigateSuggestions } = this.props;
 
     return (
       <main>
@@ -131,7 +132,7 @@ class Content extends Component {
 
               <h3>Ajuda</h3>
 
-              <Link to={ logado ? '/open' : '/login'} className='help_btn' title='Reclame aqui de uma empresa' onClick={ handleSelectedCompany }>Reclamação de uma empresa</Link>
+              <Link to={ logado ? '/open' : '/login'} className='help_btn' title='Reclame aqui de uma empresa' >Reclamação de uma empresa</Link>
 
             </div>
 

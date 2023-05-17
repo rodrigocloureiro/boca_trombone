@@ -1,0 +1,32 @@
+[
+  {
+    "nome": "Maria",
+    "sobrenome": "Souza",
+    "username": "@mariasouza",
+    "email": "mariasouza@gmail.com",
+    "id": "1001",
+    "senha": "Teste@12345",
+    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw158skapMS264YKsP7PW2zrZDBiz5AevfmqHcfKk&s",
+    "definicao": "consumidor"
+  },
+  {
+    "nome": "Rodrigo",
+    "sobrenome": "Costa",
+    "username": "@rodrigocosta34",
+    "email": "rodrigo@gmail.com",
+    "id": "1002",
+    "senha": "Teste@123",
+    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBOLtvPKBIfVjTIzpeyw4GUIAIyS3OE8ex5gI265c&s",
+    "definicao": "consumidor"
+  },
+  {
+    "nome": "Vivo",
+    "username": "@vivo",
+    "cnpj": "02.449.992/0056-38",
+    "email": "vivo@reclamacoes.com.br",
+    "id": "1003",
+    "senha": "Admin@123",
+    "avatar": "https://www.partagenorteshoppingnatal.com.br/wp-content/uploads/sites/11/2022/12/Logo-Vivo.png",
+    "definicao": "empresa"
+  }
+]

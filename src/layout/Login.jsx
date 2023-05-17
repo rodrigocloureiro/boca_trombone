@@ -1,7 +1,39 @@
 import style from './Login.module.css';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function Login({ event, handleLogin, handlePassword }) {
+function Login({ handleValidation }) {
+  const [ login, setLogin ] = useState('');
+  const [ password, setPassword ] = useState('');
+
+  // Atribui o valor digitado no input à variável login e adiciona erro caso não preenchido corretamente
+  const handleLogin = (e) => {
+    setLogin(e.target.value);
+    const warning = document.querySelector('#login_warning');
+    const pattern = e.target.pattern;
+    if(login !== ''&& login.match(pattern) === null) {
+      e.target.classList.add(style.error);
+      warning.classList.add(style.warning);
+    } else {
+      e.target.classList.remove(style.error);
+      warning.classList.remove(style.warning);
+    }
+  };
+
+  // Atribui o valor digitado no input à variável password e adiciona erro caso não preenchido corretamente
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+    const warning = document.querySelector('#pass_warning');
+    const pattern = e.target.pattern;
+    if(password !== ''&& password.match(pattern) === null) {
+      e.target.classList.add(style.error);
+      warning.classList.add(style.warning);
+    } else {
+      e.target.classList.remove(style.error);
+      warning.classList.remove(style.warning);
+    }
+  };
+
   return (
     <main>
       
@@ -23,7 +55,7 @@ function Login({ event, handleLogin, handlePassword }) {
                     
                     <i className="bi bi-person"></i>
                     
-                    <input type="text" name="login" id="login" placeholder="Digite seu username com @" minLength="3" maxLength="15" required pattern="^(?=.*[A-Za-z0-9]$)([@])[A-Za-z\d.-]{2,15}$" onChange={ handleLogin } />
+                    <input type="text" name="login" id="login" value={login} placeholder="Digite seu username com @" minLength="3" maxLength="15" required pattern="^(?=.*[A-Za-z0-9]$)([@])[A-Za-z\d.-]{2,15}$" onChange={ (e) => handleLogin(e) } />
 
                   </div>
 
@@ -39,7 +71,7 @@ function Login({ event, handleLogin, handlePassword }) {
                     
                     <i className="bi bi-shield-lock"></i>
                     
-                    <input type="password" name="senha" id="senha" placeholder="Digite sua senha" minLength="8" maxLength="16" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" onChange={ handlePassword } />
+                    <input type="password" name="senha" id="senha" value={password} placeholder="Digite sua senha" minLength="8" maxLength="16" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" onChange={ (e) => handlePassword(e) } />
                     
                   </div>
 
@@ -50,10 +82,8 @@ function Login({ event, handleLogin, handlePassword }) {
                 <label id='general_warning' className={ style.general_warning }>Login ou senha incorretos</label>
 
                 <div className={ style.btn_login }>
-
-                  {/* <button type="submit" onClick={ event }>Login</button> */}
                   
-                  <Link to='/' onClick={ event }>Login</Link>
+                  <Link to='/' onClick={ (e) => handleValidation(e, login, password) }>Login</Link>
                 
                 </div>
 

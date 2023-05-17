@@ -1,8 +1,9 @@
-import logoface from '../../src/assets/facebook.svg';
-import logoinsta from '../../src/assets/instagram.svg';
-import logotwitter from '../../src/assets/twitter.svg';
+import logoface from '../../src/assets/images/facebook.svg';
+import logoinsta from '../../src/assets/images/instagram.svg';
+import logotwitter from '../../src/assets/images/twitter.svg';
 import { Component } from 'react';
 
+// Renderiza o Footer
 class Footer extends Component {
     render() {
         return (

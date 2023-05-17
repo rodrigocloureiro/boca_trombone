@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import style from './Modal.module.css';
 import { useState } from 'react';
 
@@ -6,11 +6,13 @@ function Modal({ claim, company, event }) {
   const [ status, setStatus ] = useState(false);
   const navigate = useNavigate();
 
+  // Fecha o modal
   function handleShowModal() {
     const modal = document.querySelector("#myModal");
     modal.style.display = "none";
   }
 
+  // Envia o usuário para a página principal 1 segundo após concluir o envio da reclamação
   function handleSubmit() {
     setStatus(true);
     setTimeout( () => {

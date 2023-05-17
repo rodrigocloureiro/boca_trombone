@@ -1,5 +1,6 @@
 import { Component } from "react";
 
+// Renderiza um input de acordo com as props recebidas
 class Input extends Component {
   render() {
     const { type, placeholder, id, className, event, eventHandler, autoComplete, value, disable, onChange, handleNavigateSuggestions } = this.props;

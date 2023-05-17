@@ -14,6 +14,7 @@ class Cliente extends Component {
     };
   }
 
+  // Busca as reclamações realizaddas pelo usuário logado ao montar o componente
   componentDidMount() {
     const { cliente } = this.props;
     const { username } = this.state;
@@ -28,6 +29,7 @@ class Cliente extends Component {
     this.setState({ reclamacoes: reclamacoesUsuario });
   };
 
+  // Remove a reclamação selecioanada pelo usuário
   handleRemoval = (dado) => {
     const { event } = this.props;
     event(dado);
@@ -36,10 +38,12 @@ class Cliente extends Component {
     }));
   };
 
+  // Abre a edição para a reclamação selecionada baseada no id da mesma
   handleEdit = (id, reclamacao) => {
     this.setState({editId: id, editedClaim: reclamacao});
   };
 
+  // Salva a edição realizada pelo usuário
   handleSaveEdit = (id) => {
     const { reclamacoes, editedClaim } = this.state;
     const claimsUpdated = reclamacoes.map(item => {

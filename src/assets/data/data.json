@@ -1,0 +1,176 @@
+[
+  {
+    "nome": "Vivo",
+    "id": 1,
+    "cnpj": "02.449.992/0056-38",
+    "imageURL": "https://logopng.com.br/logos/vivo-119.svg",
+    "reclamacoes": [
+      {
+        "nome": "João",
+        "sobrenome": "Silva",
+        "username": "@joaosilva",
+        "reclamacao": "Contratei um plano de internet da Vivo que prometia uma velocidade de navegação rápida e ilimitada. No entanto, após algumas semanas de uso, percebi que a velocidade era muito abaixo do que havia sido prometido e a conexão caía frequentemente, deixando-me sem acesso à internet. Tentei entrar em contato com a Vivo diversas vezes para solucionar o problema, mas o atendimento ao cliente foi muito ineficiente e pouco prestativo.",
+        "id": 1,
+        "status": "Aberta",
+        "data": "2023/04/02",
+        "horario": "16:30:00"
+      },
+      {
+        "nome": "Maria",
+        "sobrenome": "Souza",
+        "username": "@mariasouza",
+        "reclamacao": "Comprei um aparelho celular da Vivo e, após alguns dias de uso, o dispositivo começou a apresentar problemas de lentidão, travamentos e desligamentos frequentes. Tentei entrar em contato com a empresa para solucionar o problema, mas o atendimento ao cliente foi muito burocrático e pouco eficiente, demorando semanas para uma resposta.",
+        "id": 2,
+        "status": "Aberta",
+        "data": "2023/02/03",
+        "horario": "15:30:00"
+      },
+      {
+        "nome": "Pedro",
+        "sobrenome": "Gomes",
+        "username": "@pedrogomes",
+        "reclamacao": "Fui até uma loja da Vivo para contratar um novo plano de celular e, durante o processo de atendimento, o vendedor me ofereceu diversos serviços adicionais sem deixar claro que seriam cobrados à parte. Quando recebi a fatura, percebi que estava sendo cobrado muito mais do que havia sido combinado. Tentei entrar em contato com a Vivo para solucionar o problema, mas o atendimento ao cliente foi muito demorado e pouco eficiente.",
+        "id": 3,
+        "status": "Aberta",
+        "data": "2023/01/02",
+        "horario": "14:30:00"
+      }
+    ]
+  },
+  {
+    "nome": "Oi",
+    "id": 2,
+    "cnpj": "76.535.764/0001-43",
+    "imageURL": "https://logodownload.org/wp-content/uploads/2014/02/oi-logo.png",
+    "reclamacoes": [
+      {
+        "nome": "Alexandre",
+        "sobrenome": "Silva",
+        "username": "@alexandre1910",
+        "reclamacao": "Contratei um pacote de TV, internet e telefone fixo da Oi e, desde o primeiro dia de uso, tive problemas com a conexão de internet que oscilava muito e caía com frequência. Além disso, a qualidade do sinal da TV era muito ruim e o telefone apresentava muitas interferências durante as ligações. Tentei entrar em contato com a Oi diversas vezes para solucionar o problema, mas o atendimento ao cliente foi muito ineficiente e pouco prestativo. Após várias tentativas, solicitei o cancelamento do contrato, mas fui informado que teria que pagar uma multa rescisória, mesmo tendo motivos justificáveis para o cancelamento.",
+        "id": 4,
+        "status": "Aberta",
+        "data": "2022/11/28",
+        "horario": "12:39:42"
+      }
+    ]
+  },
+  {
+    "nome": "Tim",
+    "id": 3,
+    "cnpj": "02.421.421/0001-11",
+    "imageURL": "https://logodownload.org/wp-content/uploads/2015/02/tim-logo-2-1.png",
+    "reclamacoes": [
+      {
+        "nome": "João",
+        "sobrenome": "Seixas",
+        "username": "@joaopaulo272",
+        "reclamacao": "Contratei um plano de celular da TIM que incluía uma quantidade de dados móveis, minutos de voz e mensagens de texto ilimitados. No entanto, após algumas semanas de uso, percebi que a velocidade da internet estava muito abaixo do que havia sido prometido, a cobertura da rede era insuficiente em muitas áreas e eu não conseguia realizar ligações em algumas regiões. Tentei entrar em contato com a TIM para solucionar o problema, mas o atendimento ao cliente foi muito demorado e pouco eficiente. Além disso, fui informado que, devido a um contrato de fidelidade, eu teria que pagar uma multa caso quisesse cancelar o plano.",
+        "id": 5,
+        "status": "Resolvida",
+        "data": "2022/08/01",
+        "horario": "20:24:56"
+      }
+    ]
+  },
+  {
+    "nome": "Claro",
+    "id": 4,
+    "cnpj": "40.432.544/0001-47",
+    "imageURL": "https://logodownload.org/wp-content/uploads/2014/02/claro-logo1.png",
+    "reclamacoes": [
+      {
+        "nome": "Guilherme",
+        "sobrenome": "Duffes",
+        "username": "@duffes1777",
+        "reclamacao": "Contratei um plano de internet e telefone fixo da Claro e, após alguns dias de uso, percebi que a velocidade da internet era muito inferior à que havia sido prometida. Além disso, a linha telefônica apresentava muitas interferências e ruídos, tornando as ligações praticamente impossíveis. Tentei entrar em contato com a empresa diversas vezes para solucionar o problema, mas o atendimento ao cliente foi ineficiente e pouco prestativo.",
+        "id": 6,
+        "status": "Resolvida",
+        "data": "2022/10/20",
+        "horario": "19:09:12"
+      }
+    ]
+  },
+  {
+    "nome": "Itau",
+    "id": 5,
+    "cnpj": "60.701.190/0001-04",
+    "imageURL": "https://logodownload.org/wp-content/uploads/2014/05/itau-logo-1.png",
+    "reclamacoes": [
+      {
+        "nome": "Rodrigo",
+        "sobrenome": "Vianna",
+        "username": "@viannarodr40",
+        "reclamacao": "Fiz um empréstimo no Itaú e, ao receber o contrato, percebi que havia uma taxa de juros muito mais alta do que a que havia sido informada no momento da contratação. Tentei entrar em contato com o banco para esclarecer o erro, mas fui informado que não havia possibilidade de negociação e que a taxa seria mantida. Além disso, o processo de liberação do empréstimo foi muito demorado e burocrático, o que me causou transtornos financeiros.",
+        "id": 7,
+        "status": "Aberta",
+        "data": "2022/06/28",
+        "horario": "12:39:42"
+      }
+    ]
+  },
+  {
+    "nome": "Bradesco",
+    "id": 6,
+    "cnpj": "60.746.948/0001-12",
+    "imageURL": "https://logodownload.org/wp-content/uploads/2018/09/bradesco-logo-novo-2018.png",
+    "reclamacoes": [
+      {
+        "nome": "Rodrigo",
+        "sobrenome": "Costa",
+        "username": "@rodrigocosta34",
+        "reclamacao": "Abri uma conta no Bradesco e, após algumas semanas, descobri que estavam sendo cobradas diversas taxas e tarifas que não haviam sido informadas no momento da abertura da conta. Quando tentei cancelar a conta, fui informado que seria cobrada uma taxa adicional de encerramento, o que não havia sido informado antes. Além disso, o atendimento ao cliente foi muito demorado e pouco eficiente.",
+        "id": 8,
+        "status": "Aberta",
+        "data": "2022/12/12",
+        "horario": "12:39:42"
+      }
+    ]
+  },
+  {
+    "nome": "Santander",
+    "id": 7,
+    "cnpj": "90.400.888/0001-42",
+    "imageURL": "https://logodownload.org/wp-content/uploads/2017/05/banco-santander-logo-41.png",
+    "reclamacoes": [
+      {
+        "nome": "Nelson",
+        "sobrenome": "Grossoni",
+        "username": "@grossnelson",
+        "reclamacao": "Comprei um ingresso para um evento esportivo, mas quando cheguei ao local fui informado que o evento havia sido cancelado e não havia nenhuma previsão de reembolso.",
+        "id": 9,
+        "status": "Resolvida",
+        "data": "2022/05/06",
+        "horario": "12:39:42"
+      }
+    ]
+  },
+  {
+    "nome": "123 Milhas",
+    "id": 8,
+    "cnpj": "26.669.170/0001-57",
+    "imageURL": "https://logodownload.org/wp-content/uploads/2022/06/123-milhas-logo-0-2048x2048.png",
+    "reclamacoes": [
+      {
+        "nome": "Felipe",
+        "sobrenome": "Barbosa",
+        "username": "@barbfelpo",
+        "reclamacao": "Comprei uma passagem aérea pela empresa 123 Milhas e, ao chegar no aeroporto, descobri que o voo havia sido cancelado e não fui avisado antecipadamente. Tentei entrar em contato com a empresa para reagendar o voo ou obter reembolso, mas não obtive resposta.",
+        "id": 10,
+        "status": "Aberta",
+        "data": "2023/01/15",
+        "horario": "12:39:42"
+      },
+      {
+        "nome": "Maria",
+        "sobrenome": "Souza",
+        "username": "@mariasouza",
+        "reclamacao": "Fiz a compra de uma passagem aérea pela 123 Milhas e, após o pagamento, recebi a confirmação da reserva. No entanto, quando fui realizar o check-in no aeroporto, fui informada que a reserva não existia e não havia nenhum registro do meu pagamento. Tentei entrar em contato com a empresa, mas não obtive resposta.",
+        "id": 11,
+        "status": "Aberta",
+        "data": "2023/04/05",
+        "horario": "12:39:42"
+      }
+    ]
+  }
+]

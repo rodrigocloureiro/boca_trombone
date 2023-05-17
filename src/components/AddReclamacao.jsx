@@ -13,14 +13,17 @@ class AddReclamacao extends Component {
     };
   }
 
+  // Remove o aviso de empresa não selecionada
   handleCompany = () => {
     document.querySelector("#listCompany").classList.remove(`${style.warning}`);
   };
 
+  // Remove o aviso de reclamação não digitada
   handleClaimValue = () => {
     document.querySelector("#claim").classList.remove(`${style.warning}`);
   };
 
+  // Exibe o modal caso a área de reclamação esteja preenchida corretamente, caso não, exibe o erro em questão que não permite envio
   handleShowModal = (e) => {
     e.preventDefault();
     if(this.state.claim.length > 0 && this.state.company.length > 0) {
@@ -39,7 +42,7 @@ class AddReclamacao extends Component {
   };
 
   render() {
-    const { empresas, event, usuario, definicao, empresa } = this.props;
+    const { empresas, event, usuario, definicao } = this.props;
 
     return (
       <main>
@@ -74,7 +77,7 @@ class AddReclamacao extends Component {
               {
                 definicao === 'empresa' ?
 
-                <Input type='text' placeholder='Digite o seu sobrenome' id='claimSurname' autoComplete='off' value={ usuario.cnpj } disable={ true } />
+                <Input type='text' placeholder='Digite o seu CNPJ' id='claimCnpj' autoComplete='off' value={ usuario.cnpj } disable={ true } />
                 :
                 <Input type='text' placeholder='Digite o seu sobrenome' id='claimSurname' autoComplete='off' value={ usuario.sobrenome } disable={ false } />
               }
@@ -86,7 +89,6 @@ class AddReclamacao extends Component {
                 this.handleClaimValue();
               }} />
 
-              {/* <Link to='/' role='button' className={ style.claim_btn } onClick={ event }>Enviar reclamação</Link> */}
               <Link to='/' role='button' className={ style.claim_btn } onClick={ this.handleShowModal }>Enviar reclamação</Link>
               
             </form>

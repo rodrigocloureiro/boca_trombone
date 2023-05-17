@@ -15,6 +15,7 @@ class Empresa extends Component {
     };
   }
 
+  // Busca as reclamações e logotipo referentes a empresa logada ao montar o componente
   componentDidMount() {
     const { empresas, usuario } = this.props;
 
@@ -28,12 +29,19 @@ class Empresa extends Component {
     });
   };
 
+  // Altera o status do reclamação para 'Resolvida'
+  handleStatus = (dado) => {
+    dado.status = 'Resolvida';
+  };
+
+  // Caso a reclamação não estja resolvida, altera o estado resposta, permitindo que a empresa responda a reclamação
   handleResp = (dado) => {
     if(dado.status !== 'Resolvida')
-      this.setState({ resp:true });
+      this.setState({ resp: true });
     this.setState({ reclamacaoSelecionada: dado });
   };
 
+  // Caso a resposta seja preenchida corretamente, exibe o modal para confirmação, caso não, adiciona o erro em questão
   handleSubmitAnswer = (e) => {
     e.preventDefault();
     const answerValue = document.querySelector('#answer').value;
@@ -43,11 +51,25 @@ class Empresa extends Component {
       document.querySelector('#answer').classList.add(`${style.warning}`);
     }
   };
+
+  // Adiciona a resposta da empresa à reclamação selecionada
+  handleAnswer = (param, company) => {
+    const { empresas } = this.props;
+    const data = new Date();
+
+    const compAnswer = document.querySelector('#answer').value;
+    empresas.map(item => {
+      if(item.nome === company.nome)
+        item.reclamacoes.forEach(reclamacao => {
+          if(reclamacao.id === param.id)
+            reclamacao.resposta = {texto: compAnswer, data: data};
+        });
+    });
+  };
   
   render() {
-    const { usuario, status, answer } = this.props;
+    const { usuario } = this.props;
     const { reclamacoes, logo, resp, reclamacaoSelecionada, confirm, answerValue } = this.state;
-    const date = new Date().getTime();
 
     return (
       <main>
@@ -57,7 +79,7 @@ class Empresa extends Component {
               {confirm ? (
                 <>
                   <h2>Resposta enviada!</h2>
-                  <Link to='/' role='button' className={ style.modal_button } onClick={ () => this.props.answer(this.state.reclamacaoSelecionada, this.props.usuario) }>Voltar para o início</Link>
+                  <Link to='/' role='button' className={ style.modal_button } onClick={ () => this.handleAnswer(this.state.reclamacaoSelecionada, this.props.usuario) }>Voltar para o início</Link>
                 </>
                ) : (<h2>Você confirma os dados?</h2>)
               }
@@ -113,7 +135,7 @@ class Empresa extends Component {
                       }
                       {
                         dado.status !== 'Resolvida' &&
-                        <button key={ `btn${ dado.id }` } className={ style.close_claim } onClick={ () => status(dado) }>Fechar reclamação</button>
+                        <button key={ `btn${ dado.id }` } className={ style.close_claim } onClick={ () => this.handleStatus(dado) }>Fechar reclamação</button>
                       }
                     </li>
                   ))
@@ -145,7 +167,6 @@ class Empresa extends Component {
 
                   <div className={ style.answer_btns_area }>
 
-                    {/* <Link to='/' role='button' className={ style.answer_btn } onClick={ () => answer(reclamacaoSelecionada, usuario) }>Enviar resposta</Link> */}
                     <button className={ style.answer_btn } onClick={ this.handleSubmitAnswer }>Enviar resposta</button>
 
                   </div>
