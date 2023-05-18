@@ -1,6 +1,6 @@
 import style from './Signup.module.css';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 function Signup({ empresas, mockLogin }) {
   const [ typeAccount, setTypeAccount ] = useState('');
@@ -10,6 +10,12 @@ function Signup({ empresas, mockLogin }) {
   const [ email, setEmail ] = useState('');
   const [ login, setLogin ] = useState('');
   const [ password, setPassword ] = useState('');
+  const inputNomeRef = useRef();
+  const inputSobrenomeRef = useRef();
+  const inputCnpjRef = useRef();
+  const inputEmailRef = useRef();
+  const inputLoginRef = useRef();
+  const inputPasswordRef = useRef();
 
   // Válida as informações dos inputs
   const handleInputValidation = (e, regex) => {
@@ -31,12 +37,8 @@ function Signup({ empresas, mockLogin }) {
       e.preventDefault();
       alert('Escolha o tipo de conta!');
     } else {
-      const name = document.querySelector('#nome');
-      const emailDOM = document.querySelector('#email');
-      const username = document.querySelector('#login-signup');
-      const passwordDOM = document.querySelector('#senha-signup');
-      const auxDOM = typeAccount === 'consumidor' ? document.querySelector('#sobrenome') : document.querySelector('#cnpj'); // Captura o elemento no DOM de acordo com a variáve typeAccount
-      const check = [ name, emailDOM, username, passwordDOM, auxDOM ].some(item => item.classList.contains('_error_1vpv1_105'));
+      const auxDOM = typeAccount === 'consumidor' ? inputSobrenomeRef.current : inputCnpjRef.current; // Captura o elemento no DOM de acordo com a variáve typeAccount
+      const check = [ inputNomeRef.current, inputEmailRef.current, inputLoginRef.current, inputPasswordRef.current, auxDOM ].some(item => item.classList.contains(`${style.error}`));
       if(nome.length && email.length && login.length && password.length && (sobrenome.length || cnpj.length) && !check) {
         const newUser = {
           nome: nome,
@@ -97,12 +99,12 @@ function Signup({ empresas, mockLogin }) {
                 <label htmlFor="nome">Nome</label>
                 <div className={ style.ipt_nome }>
                   <i className="bi bi-person-vcard"></i>
-                  <input type="text" name="nome" id="nome" value={nome} placeholder="Digite seu nome" required minLength="2" onChange={ (e) => {setNome(e.target.value); handleInputValidation(e, /^[a-zA-Z]+([',. -][a-zA-Z ])?[a-zA-Z]*$/)} } />
+                  <input type="text" name="nome" id="nome" ref={inputNomeRef} value={nome} placeholder="Digite seu nome" required minLength="2" onInput={ (e) => {setNome(e.target.value); handleInputValidation(e, /^[a-zA-Z]+([',. -][a-zA-Z ])?[a-zA-Z]*$/)} } />
                 </div>
                 
               </div>
 
-              <label id='nome__sign_warning' className='nome__sign_warning'>Apenas letras maiúsculas e minúsculas</label>
+              <label id='nome__sign_warning' className={style.nome__sign_warning}>Apenas letras maiúsculas e minúsculas</label>
 
               {
                 typeAccount === 'consumidor' && (
@@ -111,13 +113,13 @@ function Signup({ empresas, mockLogin }) {
                     <label htmlFor="sobrenome">Sobrenome</label>
                     <div className={ style.ipt_nome }>
                       <i className="bi bi-person-vcard"></i>
-                      <input type="text" name="sobrenome" id="sobrenome" value={sobrenome} placeholder="Digite seu sobrenome" required minLength="2" onChange={ (e) => {setSobrenome(e.target.value); handleInputValidation(e, /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/)} } />
+                      <input type="text" name="sobrenome" id="sobrenome" ref={inputSobrenomeRef} value={sobrenome} placeholder="Digite seu sobrenome" required minLength="2" onInput={ (e) => {setSobrenome(e.target.value); handleInputValidation(e, /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/)} } />
                     </div>
                   
                   </div>
                 )
               }
-              <label id='sobrenome__sign_warning' className='sobrenome__sign_warning'>Apenas letras maiúsculas e minúsculas</label>
+              <label id='sobrenome__sign_warning' className={style.sobrenome__sign_warning}>Apenas letras maiúsculas e minúsculas</label>
               {
                 typeAccount === 'empresa' && (
                   <div>
@@ -125,49 +127,49 @@ function Signup({ empresas, mockLogin }) {
                     <label htmlFor="cnpj">CNPJ</label>
                     <div className={ style.ipt_nome }>
                       <i className="bi bi-123"></i>
-                      <input type="text" name="cnpj" id="cnpj" value={cnpj} placeholder="Digite seu CNPJ" required minLength="2" onChange={ (e) => {setCnpj(e.target.value); handleInputValidation(e, /^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$/)} } />
+                      <input type="text" name="cnpj" id="cnpj" ref={inputCnpjRef} value={cnpj} placeholder="Digite seu CNPJ" required minLength="2" onInput={ (e) => {setCnpj(e.target.value); handleInputValidation(e, /^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$/)} } />
                     </div>
                   
                   </div>
                 )
               }
-              <label id='cnpj__sign_warning' className='cnpj__sign_warning'>O CNPJ deve seguir o formato 00.000.000/0000-00</label>
+              <label id='cnpj__sign_warning' className={style.cnpj__sign_warning}>O CNPJ deve seguir o formato 00.000.000/0000-00</label>
               
               <div>
       
                 <label htmlFor="email">E-mail</label>
                 <div className={ style.ipt_email }>
                   <i className="bi bi-envelope"></i>
-                  <input type="email" name="email" id="email" value={email} placeholder="Digite seu e-mail" required onChange={ (e) => {setEmail(e.target.value); handleInputValidation(e, /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)} } />
+                  <input type="email" name="email" id="email" ref={inputEmailRef} value={email} placeholder="Digite seu e-mail" required onInput={ (e) => {setEmail(e.target.value); handleInputValidation(e, /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)} } />
                 </div>    
                 
               </div>
 
-              <label id='email__sign_warning' className='email__sign_warning'>Formato de e-mail inválido</label>
+              <label id='email__sign_warning' className={style.email__sign_warning}>Formato de e-mail inválido</label>
       
               <div>
       
                 <label htmlFor="login">Login</label>
                 <div className={ style.ipt_login }>
                   <i className="bi bi-person"></i>
-                  <input type="text" name="login" id="login-signup" value={login} placeholder="Digite seu username" minLength="3" maxLength="15" required onChange={ (e) => {setLogin(e.target.value); handleInputValidation(e, /^(?=.*[A-Za-z0-9]$)([@])[A-Za-z\d.-]{2,15}$/)} } />
+                  <input type="text" name="login" id="login-signup" ref={inputLoginRef} value={login} placeholder="Digite seu username" minLength="3" maxLength="15" required onInput={ (e) => {setLogin(e.target.value); handleInputValidation(e, /^(?=.*[A-Za-z0-9]$)([@])[A-Za-z\d.-]{2,15}$/)} } />
                 </div>
       
               </div>
 
-              <label id='login__sign_warning' className='login__sign_warning'>3 a 15 caracteres. Deve começar com @</label>
+              <label id='login__sign_warning' className={style.login__sign_warning}>3 a 15 caracteres. Deve começar com @</label>
       
               <div>
       
                 <label htmlFor="senha">Senha</label>
                 <div className={ style.ipt_pass }>
                   <i className="bi bi-shield-lock"></i>
-                  <input type="password" name="senha" id="senha-signup" value={password} placeholder="Digite sua senha" minLength="8" maxLength="16" required onChange={ (e) => {setPassword(e.target.value); handleInputValidation(e, /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)} } />
+                  <input type="password" name="senha" id="senha-signup" ref={inputPasswordRef} value={password} placeholder="Digite sua senha" minLength="8" maxLength="16" required onInput={ (e) => {setPassword(e.target.value); handleInputValidation(e, /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)} } />
                 </div>
       
               </div>
 
-              <label id='pass__sign_warning' className='pass__sign_warning'>8 a 16 caracteres, incluindo pelo menos um símbolo, letra maiúscula e número</label>
+              <label id='pass__sign_warning' className={style.pass__sign_warning}>8 a 16 caracteres, incluindo pelo menos um símbolo, letra maiúscula e número</label>
       
               <div className={ style.btn_login }>
       

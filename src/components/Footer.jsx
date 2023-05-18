@@ -2,16 +2,17 @@ import logoface from '../../src/assets/images/facebook.svg';
 import logoinsta from '../../src/assets/images/instagram.svg';
 import logotwitter from '../../src/assets/images/twitter.svg';
 import { Component } from 'react';
+import style from './Footer.module.css';
 
 // Renderiza o Footer
 class Footer extends Component {
     render() {
         return (
-            <footer>
+            <footer className={style.footer}>
 
-                <div className='container'>
+                <div className={style.container}>
 
-                    <div className='socials'>
+                    <div className={style.socials}>
 
                         <a href="#" title="Facebook"><img src={ logoface } alt="Facebook icon" /></a>
 

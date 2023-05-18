@@ -107,6 +107,16 @@
   border-bottom: 1px solid #ff0000;
 }
 
+.nome__sign_warning,
+.email__sign_warning,
+.sobrenome__sign_warning,
+.cnpj__sign_warning,
+.login__sign_warning,
+.pass__sign_warning,
+.general__sign_warning {
+  display: none !important;
+}
+
 @media (min-width: 490px) {
   .form_modal {
     width: 450px;

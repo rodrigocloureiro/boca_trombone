@@ -1,37 +1,38 @@
 import style from './Login.module.css';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 function Login({ handleValidation }) {
   const [ login, setLogin ] = useState('');
   const [ password, setPassword ] = useState('');
-
-  // Atribui o valor digitado no input à variável login e adiciona erro caso não preenchido corretamente
-  const handleLogin = (e) => {
-    setLogin(e.target.value);
-    const warning = document.querySelector('#login_warning');
+  const loginWarningRef = useRef(); // label de aviso do login
+  const passWarningRef = useRef(); // label de aviso do password
+  const failedLoginRef = useRef(); // label de aviso login não sucedido
+  
+  // Adiciona erro caso não preenchido corretamente
+  const handleInputValidation = (e, warning) => {
+    let value = e.target.value;
     const pattern = e.target.pattern;
-    if(login !== ''&& login.match(pattern) === null) {
+    failedLoginRef.current.classList.contains(style.warning) ? failedLoginRef.current.classList.remove(style.warning) : null;
+    if(value !== '' && value.match(pattern) === null) {
       e.target.classList.add(style.error);
-      warning.classList.add(style.warning);
+      warning.current.classList.add(style.warning);
     } else {
       e.target.classList.remove(style.error);
-      warning.classList.remove(style.warning);
+      warning.current.classList.remove(style.warning);
     }
   };
 
-  // Atribui o valor digitado no input à variável password e adiciona erro caso não preenchido corretamente
+  // Atribui o valor digitado no input à variável login
+  const handleLogin = (e) => {
+    setLogin(e.target.value);
+    handleInputValidation(e, loginWarningRef);
+  };
+
+  // Atribui o valor digitado no input à variável password
   const handlePassword = (e) => {
     setPassword(e.target.value);
-    const warning = document.querySelector('#pass_warning');
-    const pattern = e.target.pattern;
-    if(password !== ''&& password.match(pattern) === null) {
-      e.target.classList.add(style.error);
-      warning.classList.add(style.warning);
-    } else {
-      e.target.classList.remove(style.error);
-      warning.classList.remove(style.warning);
-    }
+    handleInputValidation(e, passWarningRef);
   };
 
   return (
@@ -59,7 +60,7 @@ function Login({ handleValidation }) {
 
                   </div>
 
-                  <label id='login_warning' className={ style.login_warning }>3 a 15 caracteres. Deve começar com @</label>
+                  <label id='login_warning' ref={loginWarningRef} className={ style.login_warning }>3 a 15 caracteres. Deve começar com @</label>
                   
                 </div>
 
@@ -75,11 +76,11 @@ function Login({ handleValidation }) {
                     
                   </div>
 
-                  <label id='pass_warning' className={ style.pass_warning }>8 a 16 caracteres, incluindo pelo menos um símbolo, letra maiúscula e número</label>
+                  <label id='pass_warning' ref={passWarningRef} className={ style.pass_warning }>8 a 16 caracteres, incluindo pelo menos um símbolo, letra maiúscula e número</label>
                   
                 </div>
 
-                <label id='general_warning' className={ style.general_warning }>Login ou senha incorretos</label>
+                <label id='general_warning' ref={failedLoginRef} className={ style.general_warning }>Login ou senha incorretos</label>
 
                 <div className={ style.btn_login }>
                   

@@ -1,0 +1,21 @@
+.footer {
+  grid-area: footer;
+  height: 114px;
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+  padding: 20px 50px;
+}
+
+.socials a:not(:last-child) {
+  margin-right: 20px;
+}
+
+.socials a img {
+  width: 32px;
+}

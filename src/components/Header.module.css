@@ -1,0 +1,175 @@
+.header {
+  border-bottom: 2px solid #bbb;
+  grid-area: header;
+  height: 83px;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 50px;
+  margin: 0 auto;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+}
+
+.search_input {
+  width: 95%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #eee;
+}
+
+.search_input:focus {
+  outline: none;
+}
+
+.suggestions {
+  width: 95%;
+  position: absolute;
+  top: 30px;
+  background-color: #eee;
+  font-size: small;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+.buttons_area ul {
+  display: flex;
+  list-style: none;
+}
+
+.mobile_menu .user_area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px 0;
+}
+
+.mobile_menu .user_area img {
+  width: 100px;
+  margin-bottom: -10px;
+}
+
+.mobile_menu .user_info {
+  font-size: 20px;
+}
+
+.user_area:not(.mobile_menu .user_area) {
+  display: none;
+}
+
+.user_logout {
+  display: inherit;
+  align-items: center;
+  gap: 0 5px;
+  color: #f39b6d;
+  text-decoration: none;
+}
+
+.user_logout:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #ff5900;
+}
+
+.logo_area img {
+  width: 150px;
+}
+
+.menu_image {
+  width: 32px;
+}
+
+.menu {
+  position: absolute;
+  top: 83px;
+  left: 0;
+  background-color: #fff;
+  width: 50vw;
+  height: calc(100vh - 83px);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 30px;
+  padding: 30px 0;
+  transform: translateX(-767px);
+  transition: 1s;
+}
+
+.btn_signup,
+.btn_login {
+  display: inline-block;
+  min-width: 130px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn_signup {
+  background-color: #3e6990ff;
+}
+
+.btn_login {
+  background-color: #aabd8cff;
+}
+
+.user_avatar {
+  width: 35px;
+  border-radius: 50%;
+}
+
+.search_area,
+.buttons_area {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .search_area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .header_btn {
+    position: absolute;
+    right: 5%;
+  }
+
+  .mobile_menu {
+    display: none;
+  }
+
+  .user_area:not(.mobile_menu .user_area) {
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+  }
+
+  .buttons_area {
+    display: block;
+  }
+
+  .buttons_area ul {
+    column-gap: 10px;
+  }
+  
+  .btn_signup:hover {
+    background-color: #3e6990cc;
+  }
+  
+  .btn_login:hover {
+    background-color: #889575ff;
+  }
+}

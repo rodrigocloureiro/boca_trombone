@@ -131,11 +131,11 @@ class App extends Component {
   // Efetua a pesquisa do input localizado no header
   handleSearch = (e) => {
     let company = document.querySelector('#search').value.toLowerCase();
-    const suggestions = document.querySelector('.suggestions');
+    const suggestions = document.querySelector('#suggestions');
 
     if(this.state.empresas.some(item => (item.nome.toLowerCase()) === company)) {
       this.setState({ empresa: company });
-      e === undefined ? document.querySelector('.header_btn').click() : null;
+      e === undefined ? document.querySelector('#header_btn').click() : null;
       this.limpaSugestoes(suggestions);
       document.querySelector('#search').value = '';
     }
@@ -148,11 +148,11 @@ class App extends Component {
   // Efetua a pesquisa do input localizado no main
   handleFind = (e) => {
     let company = document.querySelector('#find').value.toLowerCase();
-    const suggestions = document.querySelector('.suggestions');
+    const suggestions = document.querySelector('#suggestions');
 
     if(this.state.empresas.some(item => (item.nome.toLowerCase()) === company)) {
       this.setState({ empresa: company });
-      e === undefined ? document.querySelector('.find-button').click() : null;
+      e === undefined ? document.querySelector('#find-btn').click() : null;
       this.limpaSugestoes(suggestions);
       document.querySelector('#find').value = '';
     }

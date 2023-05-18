@@ -2,6 +2,7 @@ import buscarImg from '../../src/assets/images/search.svg';
 import Input from './Input';
 import { Link } from 'react-router-dom';
 import { Component } from 'react';
+import style from './Content.module.css';
 
 class Content extends Component {
   constructor(props) {
@@ -44,23 +45,23 @@ class Content extends Component {
 
         <div className='container'>
 
-          <section className='find-area'>
+          <section className={style.find_area}>
 
-            <div className='title-area'>
+            <div className={style.title_area}>
 
               <h1>Encontre a empresa e faça sua reclamação</h1>
 
             </div>
 
-            <div className='find'>
+            <div className={style.find}>
 
-              <Input type='text' placeholder='Digite o nome da empresa' id='find' className='find_input' event={handleSuggestions} autoComplete='off' handleNavigateSuggestions={ handleNavigateSuggestions } />
+              <Input type='text' placeholder='Digite o nome da empresa' id='find' className={style.find_input} event={handleSuggestions} autoComplete='off' handleNavigateSuggestions={ handleNavigateSuggestions } />
 
-              <div className='suggestions'></div>
+              <div className={style.suggestions} id='suggestions'></div>
 
-              <Link to='/historico' role="button" className='find-button' id="find-btn" onClick={event}>Buscar</Link>
+              <Link to='/historico' role="button" className={style.find_button} id="find-btn" onClick={event}>Buscar</Link>
 
-              <Link to='/historico' role="button" className='find-image' id="find-mobile-btn" onClick={event}>
+              <Link to='/historico' role="button" className={style.find_image} id="find-mobile-btn" onClick={event}>
                 <img src={buscarImg} alt="Buscar" />
               </Link>
 
@@ -68,10 +69,10 @@ class Content extends Component {
 
           </section>
 
-          <section className='rankings-area'>
+          <section className={style.rankings_area}>
             <div>
-              <p className='ranking-title'>Melhores empresas</p>
-              <ul className='rank_best_percent'>
+              <p className={style.ranking_title}>Melhores empresas</p>
+              <ul className={style.rank_best_percent}>
                 {
                   ranking.sort((a, b) => b.percentual - a.percentual)
                   .slice(0, 8)
@@ -85,8 +86,8 @@ class Content extends Component {
               </ul>
             </div>
             <div>
-              <p className='ranking-title'>Mais reclamadas</p>
-              <ul className='rank_best_percent'>
+              <p className={style.ranking_title}>Mais reclamadas</p>
+              <ul className={style.rank_best_percent}>
                 {
                   ranking.sort((a, b) => b.nReclamacoes - a.nReclamacoes)
                   .slice(0, 8)
@@ -101,15 +102,15 @@ class Content extends Component {
             </div>
           </section>
 
-          <section className='utilities-area'>
+          <section className={style.utilities_area}>
             {
               definicao !== 'empresa' &&
 
-              <div className='client'>
+              <div className={style.client}>
   
                 <h3>Consumidor</h3>
   
-                <Link to={ logado ? '/cliente' : '/login'} className='client_btn' title='Área do consumidor'>Área do Consumidor</Link>
+                <Link to={ logado ? '/cliente' : '/login'} className={style.client_btn} title='Área do consumidor'>Área do Consumidor</Link>
   
               </div>
 
@@ -118,21 +119,21 @@ class Content extends Component {
             {
               definicao !== 'consumidor' &&
               
-              <div className='company'>
+              <div className={style.company}>
 
                 <h3>Empresa</h3>
 
-                <Link to={ logado ? '/empresa' : '/login'} role='button' className='company_btn' title='Área da Empresa'>Área da Empresa</Link>
+                <Link to={ logado ? '/empresa' : '/login'} role='button' className={style.company_btn} title='Área da Empresa'>Área da Empresa</Link>
 
               </div>
             
             }
 
-            <div className='help'>
+            <div className={style.help}>
 
               <h3>Ajuda</h3>
 
-              <Link to={ logado ? '/open' : '/login'} className='help_btn' title='Reclame aqui de uma empresa' >Reclamação de uma empresa</Link>
+              <Link to={ logado ? '/open' : '/login'} className={style.help_btn} title='Reclame aqui de uma empresa' >Reclamação de uma empresa</Link>
 
             </div>
 

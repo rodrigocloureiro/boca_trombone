@@ -5,6 +5,7 @@ import Input from './Input';
 import { Link } from 'react-router-dom';
 import { Component } from 'react';
 import { BsBoxArrowInRight } from "react-icons/bs";
+import style from './Header.module.css';
 
 class Header extends Component {
   constructor(props) {
@@ -15,11 +16,11 @@ class Header extends Component {
     const { handleMobileMenu, handleSuggestions, event, logado, usuario, logout, definicao, handleNavigateSuggestions } = this.props;
 
     return (
-      <header>
+      <header className={style.header}>
 
-        <div className='container'>
+        <div className={style.container}>
 
-          <div className='logo-area'>
+          <div className={style.logo_area}>
 
             <Link to='/' title='Home'>
               <img src={ logotipo } alt="Logotipo Boca no Trombone" />
@@ -27,13 +28,13 @@ class Header extends Component {
 
           </div>
 
-          <div className='search-area'>
+          <div className={style.search_area}>
             
-            <Input type='text' placeholder='Digite o nome ou CNPJ da empresa' id='search' className='search_input' event={ handleSuggestions } autoComplete='off' handleNavigateSuggestions={ handleNavigateSuggestions } />
+            <Input type='text' placeholder='Digite o nome ou CNPJ da empresa' id='search' className={style.search_input} event={ handleSuggestions } autoComplete='off' handleNavigateSuggestions={ handleNavigateSuggestions } />
 
-            <div className='suggestions'></div>
+            <div className={style.suggestions} id='suggestions'></div>
 
-            <Link to='/historico' role="button" className='header_btn' onClick={ event }>
+            <Link to='/historico' role="button" className={style.header_btn} id='header_btn' onClick={ event }>
               <img src={ buscarImg } alt="Buscar" />
             </Link>
 
@@ -41,19 +42,19 @@ class Header extends Component {
 
           {
             !logado ? (
-              <nav className='buttons-area'>
+              <nav className={style.buttons_area}>
   
               <ul>
   
                 <li>
 
-                  <Link to='/signup' className='btn_signup' title='Cadastre-se'>Cadastre-se</Link>
+                  <Link to='/signup' className={style.btn_signup} title='Cadastre-se'>Cadastre-se</Link>
   
                 </li>
   
                 <li>
   
-                  <Link to='/login' className='btn_login' title='Login'>Login</Link>
+                  <Link to='/login' className={style.btn_login} title='Login'>Login</Link>
   
                 </li>
   
@@ -62,11 +63,11 @@ class Header extends Component {
             </nav>
             ) : 
             (
-              <div className='user-area'>
+              <div className={style.user_area}>
                 
-                <img className='user_avatar' src={ usuario.avatar } alt='User avatar' />
+                <img className={style.user_avatar} src={ usuario.avatar } alt='User avatar' />
                 
-                <Link to='/' className='user-logout' onClick={ logout }>
+                <Link to='/' className={style.user_logout} onClick={ logout }>
                   
                   <BsBoxArrowInRight style={{ fontSize: 24 }} />
 
@@ -78,26 +79,26 @@ class Header extends Component {
             )
           }
 
-          <div className='mobile-menu'>
+          <div className={style.mobile_menu}>
 
-            <img className='menu-image' src={menuImg} alt="Menu" onClick={ handleMobileMenu } />
+            <img className={style.menu_image} src={menuImg} alt="Menu" onClick={ handleMobileMenu } />
 
-            <div id='menu' className='menu'>
+            <div id='menu' className={style.menu}>
 
               {
                 !logado ? (
 
                   <>
       
-                    <div className='signup-area'>
+                    <div className={style.signup_area}>
 
-                      <Link to='/signup' className='btn_signup' title='Cadastre-se'>Cadastre-se</Link>
+                      <Link to='/signup' className={style.btn_signup} title='Cadastre-se'>Cadastre-se</Link>
       
                     </div>
       
-                    <div className='login-area'>
+                    <div className={style.login_area}>
       
-                      <Link to='/login' className='btn_login' title='Login'>Login</Link>
+                      <Link to='/login' className={style.btn_login} title='Login'>Login</Link>
       
                     </div>
 
@@ -105,26 +106,26 @@ class Header extends Component {
                 )
                 :
                 (
-                  <div className='user-area'>
+                  <div className={style.user_area}>
                   
-                    <img className='user_avatar' src={ usuario.avatar } alt='User avatar' />
+                    <img className={style.user_avatar} src={ usuario.avatar } alt='User avatar' />
 
                     {
                       definicao === 'empresa' ? (
                         <>
-                          <p className='user-info'>{ usuario.nome }</p>
-                          <p className='user-info'>{ usuario.cnpj }</p>
-                          <p className='user-info'>{ usuario.email }</p>
+                          <p className={style.user_info}>{ usuario.nome }</p>
+                          <p className={style.user_info}>{ usuario.cnpj }</p>
+                          <p className={style.user_info}>{ usuario.email }</p>
                         </>
                       ) : (
                         <>
-                          <p className='user-info'>{ usuario.nome } { usuario.sobrenome }</p>
-                          <p className='user-info'>{ usuario.email }</p>
+                          <p className={style.user_info}>{ usuario.nome } { usuario.sobrenome }</p>
+                          <p className={style.user_info}>{ usuario.email }</p>
                         </>
                       )
                     }
                     
-                    <Link to='/' className='user-logout' onClick={ logout }>
+                    <Link to='/' className={style.user_logout} onClick={ logout }>
                       
                       <BsBoxArrowInRight style={{ fontSize: 24 }} />
     
