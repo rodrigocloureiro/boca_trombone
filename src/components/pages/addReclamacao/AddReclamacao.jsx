@@ -1,5 +1,5 @@
-import Input from './Input';
-import Modal from './Modal';
+import Input from '../../common/Input';
+import Modal from '../../common/Modal';
 import { Link } from 'react-router-dom';
 import style from './AddReclamacao.module.css';
 import { Component } from 'react';

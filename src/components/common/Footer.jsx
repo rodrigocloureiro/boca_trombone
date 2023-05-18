@@ -1,6 +1,6 @@
-import logoface from '../../src/assets/images/facebook.svg';
-import logoinsta from '../../src/assets/images/instagram.svg';
-import logotwitter from '../../src/assets/images/twitter.svg';
+import logoface from '../../assets/images/facebook.svg';
+import logoinsta from '../../assets/images/instagram.svg';
+import logotwitter from '../../assets/images/twitter.svg';
 import { Component } from 'react';
 import style from './Footer.module.css';
 

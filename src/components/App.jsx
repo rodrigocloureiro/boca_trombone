@@ -1,15 +1,15 @@
-import Header from './Header';
-import Content from './Content';
-import Footer from './Footer';
-import Empresa from './Empresa';
-import Historico from './Historico';
-import Cliente from './Cliente';
-import AddReclamacao from './AddReclamacao';
+import Header from './common/Header';
+import Conteudo from './pages/conteudo/Conteudo';
+import Footer from './common/Footer';
+import Empresa from './pages/empresa/Empresa';
+import Historico from './pages/historico/Historico';
+import Cliente from './pages/cliente/Cliente';
+import AddReclamacao from './pages/addReclamacao/AddReclamacao';
 import { Routes, Route } from 'react-router-dom';
-import Login from '../layout/Login';
-import Signup from '../layout/Signup';
+import Login from './pages/login/Login';
+import Signup from './pages/signup/Signup';
 import { Component } from 'react';
-import style from '../layout/Login.module.css';
+import style from '../components/pages/login/Login.module.css';
 import loading from '../assets/images/loading.gif';
 
 class App extends Component {
@@ -254,7 +254,7 @@ class App extends Component {
       <div className='grid-container'>
         <Header handleSuggestions={ this.handleSuggestions } handleMobileMenu= { this.handleMobileMenu } event={ this.handleSearch } logado={ logado } usuario={ usuario } logout={ this.handleLogout } definicao={ definicao } handleNavigateSuggestions={ this.handleNavigateSuggestions } />
         <Routes>
-          <Route path='/' element={ <Content handleSuggestions={ this.handleSuggestions } event={ this.handleFind } empresas={ empresas } logado={ logado } definicao={ definicao }  handleNavigateSuggestions={ this.handleNavigateSuggestions } /> } />
+          <Route path='/' element={ <Conteudo handleSuggestions={ this.handleSuggestions } event={ this.handleFind } empresas={ empresas } logado={ logado } definicao={ definicao }  handleNavigateSuggestions={ this.handleNavigateSuggestions } /> } />
           <Route path='/login' element={ <Login handleValidation={ this.handleValidation }  /> } />
           <Route path='/signup' element={ <Signup empresas={ empresas } mockLogin={ mockLogin } /> } />
           <Route path='/empresa' element={ <Empresa empresas={ empresas } usuario={ usuario } /> } />

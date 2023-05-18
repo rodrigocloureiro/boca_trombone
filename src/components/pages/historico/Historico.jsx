@@ -1,10 +1,10 @@
 import style from './Historico.module.css';
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
-import bom from '../assets/images/bom.png';
-import otimo from '../assets/images/otimo.png';
-import ruim from '../assets/images/ruim.png';
-import naorecomendada from '../assets/images/nao_recomendada.png';
+import bom from '../../../assets/images/bom.png';
+import otimo from '../../../assets/images/otimo.png';
+import ruim from '../../../assets/images/ruim.png';
+import naorecomendada from '../../../assets/images/nao_recomendada.png';
 
 class Historico extends Component {
   constructor(props) {

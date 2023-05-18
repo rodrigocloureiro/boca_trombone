@@ -1,6 +1,6 @@
-import logotipo from '../../src/assets/images/logo.png';
-import menuImg from '../../src/assets/images/list.svg';
-import buscarImg from '../../src/assets/images/search.svg';
+import logotipo from '../../assets/images/logo.png';
+import menuImg from '../../assets/images/list.svg';
+import buscarImg from '../../assets/images/search.svg';
 import Input from './Input';
 import { Link } from 'react-router-dom';
 import { Component } from 'react';

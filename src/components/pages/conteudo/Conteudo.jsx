@@ -1,10 +1,10 @@
-import buscarImg from '../../src/assets/images/search.svg';
-import Input from './Input';
+import buscarImg from '../../../assets/images/search.svg';
+import Input from '../../common/Input';
 import { Link } from 'react-router-dom';
 import { Component } from 'react';
-import style from './Content.module.css';
+import style from './Conteudo.module.css';
 
-class Content extends Component {
+class Conteudo extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -146,4 +146,4 @@ class Content extends Component {
   }
 }
 
-export default Content;
+export default Conteudo;
