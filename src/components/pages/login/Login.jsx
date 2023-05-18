@@ -1,6 +1,7 @@
 import style from './Login.module.css';
 import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import Input from '../../common/Input';
 
 function Login({ handleValidation }) {
   const [ login, setLogin ] = useState('');
@@ -55,8 +56,18 @@ function Login({ handleValidation }) {
                   <div className={ style.ipt_login }>
                     
                     <i className="bi bi-person"></i>
-                    
-                    <input type="text" name="login" id="login" value={login} placeholder="Digite seu username com @" minLength="3" maxLength="15" required onChange={ (e) => handleLogin(e, /^(?=.*[A-Za-z0-9]$)([@])[A-Za-z\d.-]{2,15}$/) } />
+
+                    <Input
+                      type='text'
+                      name='login'
+                      id='login'
+                      value={login}
+                      placeholder='Digite seu username com @'
+                      minLength='3'
+                      maxLength='15'
+                      required={true}
+                      event={(e) => handleLogin(e, /^(?=.*[A-Za-z0-9]$)([@])[A-Za-z\d.-]{2,15}$/)}
+                    />
 
                   </div>
 
@@ -71,8 +82,17 @@ function Login({ handleValidation }) {
                   <div className={ style.ipt_pass }>
                     
                     <i className="bi bi-shield-lock"></i>
-                    
-                    <input type="password" name="senha" id="senha" value={password} placeholder="Digite sua senha" minLength="8" maxLength="16" required onChange={ (e) => handlePassword(e, /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/) } />
+
+                    <Input
+                      type="password"
+                      name="senha"
+                      id="senha"
+                      placeholder="Digite sua senha"
+                      minLength="8"
+                      maxLength="16"
+                      required={true}
+                      event={(e) => handlePassword(e, /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)}
+                    />
                     
                   </div>
 
