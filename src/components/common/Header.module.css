@@ -47,17 +47,18 @@
 .mobile_menu .user_area {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 10px 0;
+  padding: 0 10px;
 }
 
 .mobile_menu .user_area img {
   width: 100px;
-  margin-bottom: -10px;
+  align-self: center;
 }
 
 .mobile_menu .user_info {
-  font-size: 20px;
+  font-size: 100%;
+  align-self: center;
+  margin: 5px 0;
 }
 
 .user_area:not(.mobile_menu .user_area) {
@@ -70,6 +71,7 @@
   gap: 0 5px;
   color: #f39b6d;
   text-decoration: none;
+  align-self: center;
 }
 
 .user_logout:hover {
@@ -101,6 +103,7 @@
   padding: 30px 0;
   transform: translateX(-767px);
   transition: 1s;
+  word-break: break-all;
 }
 
 .btn_signup,
@@ -133,7 +136,7 @@
   display: none;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 800px) {
   .search_area {
     width: 100%;
     display: flex;
