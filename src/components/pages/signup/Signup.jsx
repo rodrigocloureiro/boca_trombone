@@ -99,7 +99,7 @@ function Signup({ empresas, mockLogin }) {
                 <label htmlFor="nome">Nome</label>
                 <div className={ style.ipt_nome }>
                   <i className="bi bi-person-vcard"></i>
-                  <input type="text" name="nome" id="nome" ref={inputNomeRef} value={nome} placeholder="Digite seu nome" required minLength="2" onInput={ (e) => {setNome(e.target.value); handleInputValidation(e, /^[a-zA-Z]+([',. -][a-zA-Z ])?[a-zA-Z]*$/)} } />
+                  <input type="text" name="nome" id="nome" ref={inputNomeRef} value={nome} placeholder="Digite seu nome" required minLength="2" onInput={ (e) => {setNome(e.target.value); handleInputValidation(e, /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/)} } />
                 </div>
                 
               </div>
