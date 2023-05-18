@@ -10,11 +10,11 @@ function Login({ handleValidation }) {
   const failedLoginRef = useRef(); // label de aviso login não sucedido
   
   // Adiciona erro caso não preenchido corretamente
-  const handleInputValidation = (e, warning) => {
+  const handleInputValidation = (e, warning, regex) => {
     let value = e.target.value;
-    const pattern = e.target.pattern;
+    const pattern = new RegExp(regex);
     failedLoginRef.current.classList.contains(style.warning) ? failedLoginRef.current.classList.remove(style.warning) : null;
-    if(value !== '' && value.match(pattern) === null) {
+    if(value === '' || !pattern.test(value)) {
       e.target.classList.add(style.error);
       warning.current.classList.add(style.warning);
     } else {
@@ -24,15 +24,15 @@ function Login({ handleValidation }) {
   };
 
   // Atribui o valor digitado no input à variável login
-  const handleLogin = (e) => {
+  const handleLogin = (e, regex) => {
     setLogin(e.target.value);
-    handleInputValidation(e, loginWarningRef);
+    handleInputValidation(e, loginWarningRef, regex);
   };
 
   // Atribui o valor digitado no input à variável password
-  const handlePassword = (e) => {
+  const handlePassword = (e, regex) => {
     setPassword(e.target.value);
-    handleInputValidation(e, passWarningRef);
+    handleInputValidation(e, passWarningRef, regex);
   };
 
   return (
@@ -56,7 +56,7 @@ function Login({ handleValidation }) {
                     
                     <i className="bi bi-person"></i>
                     
-                    <input type="text" name="login" id="login" value={login} placeholder="Digite seu username com @" minLength="3" maxLength="15" required pattern="^(?=.*[A-Za-z0-9]$)([@])[A-Za-z\d.-]{2,15}$" onChange={ (e) => handleLogin(e) } />
+                    <input type="text" name="login" id="login" value={login} placeholder="Digite seu username com @" minLength="3" maxLength="15" required onChange={ (e) => handleLogin(e, /^(?=.*[A-Za-z0-9]$)([@])[A-Za-z\d.-]{2,15}$/) } />
 
                   </div>
 
@@ -72,7 +72,7 @@ function Login({ handleValidation }) {
                     
                     <i className="bi bi-shield-lock"></i>
                     
-                    <input type="password" name="senha" id="senha" value={password} placeholder="Digite sua senha" minLength="8" maxLength="16" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" onChange={ (e) => handlePassword(e) } />
+                    <input type="password" name="senha" id="senha" value={password} placeholder="Digite sua senha" minLength="8" maxLength="16" required onChange={ (e) => handlePassword(e, /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/) } />
                     
                   </div>
 
