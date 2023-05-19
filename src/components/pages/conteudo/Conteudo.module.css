@@ -136,12 +136,13 @@ ul.rank_best_percent li:last-child {
 
 .client_btn,
 .company_btn,
-.help_btn {
+.help_btn,
+.faq_btn {
   border-radius: 10px;
   padding: 10px 20px;
   color: #fff;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: bold;
   background-color: #3e6990ff;
   white-space: nowrap;
 }
@@ -161,6 +162,18 @@ ul.rank_best_percent li:last-child {
 .help_btn:hover {
   background-color: #ff9e9e;
   transition: .5s;
+}
+
+.faq_btn {
+  color: #3e6990ff;
+  border: 1px solid #3e6990ff;
+  background-color: transparent;
+  transition: all .5s;
+}
+
+.faq_btn:hover {
+  background-color: #3e6990ff;
+  color: #fff;
 }
 
 @media screen and (min-width: 768px) {

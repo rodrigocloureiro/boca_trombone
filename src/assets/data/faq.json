@@ -1,0 +1,24 @@
+{
+  "faq": [
+    {
+      "question": "Como eu faço para publicar uma reclamação?",
+      "answer": ["Para registrar uma reclamação no site, você precisa criar uma conta e fazer login. Depois disso, você pode navegar até a página de registro de reclamações e preencher o formulário com os detalhes da sua reclamação."]
+    },
+    {
+      "question": "Como vou ter retorno da empresa?",
+      "answer": ["A empresa pode entrar em contato com você de três formas:", "1- Por telefone;", "2- Por e-mail;", "3- Pela plataforma.", "Por isso, é importante ficar atento a estes canais e, é claro, a área do consumidor."]
+    },
+    {
+      "question": "Como faço para excluir uma reclamação?",
+      "answer":[ ""]
+    },
+    {
+      "question": "Recebi uma ligação do Boca no Trombone para resolver o meu caso? São vocês?",
+      "answer": ["Você recebeu alguma ligação suspeita? Então atenção!", "O Boca no Trombone não liga para nenhum consumidor que tenha postado uma reclamação.", "Pode ter acontecido o seguinte: as equipes de atendimento de algumas empresas, quando entram em contato, não deixam claro que são da empresa reclamada. Isso pode passar a impressão de que são do Boca no Trombone.", "Então vai a dica: se alguém ligar e falar que é do Boca no Trombone, desconfie!"]
+    },
+    {
+      "question": "Posso editar ou excluir minha reclamação depois de registrá-la?",
+      "answer": ["Isso pode variar dependendo do site específico de reclamações consumeristas que você está usando. Alguns sites permitem que você edite ou exclua sua reclamação, desde que ela ainda não tenha sido respondida pela empresa. No entanto, é sempre bom verificar as políticas e os recursos específicos do site em relação à edição ou exclusão de reclamações."]
+    }
+  ]
+}

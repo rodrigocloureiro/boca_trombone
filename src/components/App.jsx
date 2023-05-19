@@ -5,6 +5,7 @@ import Empresa from './pages/empresa/Empresa';
 import Historico from './pages/historico/Historico';
 import Cliente from './pages/cliente/Cliente';
 import AddReclamacao from './pages/addReclamacao/AddReclamacao';
+import Faq from './pages/faq/Faq';
 import { Routes, Route } from 'react-router-dom';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
@@ -252,6 +253,7 @@ class App extends Component {
           <Route path='/historico' element={ <Historico empresas={ empresas } empresa={ empresa } logado={ logado } /> } />
           <Route path='/cliente' element={ <Cliente cliente={ empresas } usuario={ usuario } event={ this.handleDeleteClaim } /> } />
           <Route path='/open' element={ <AddReclamacao empresas={ empresas } event={ this.handleClaim } usuario={ usuario } definicao={ definicao } /> } />
+          <Route path='/faq' element={ <Faq /> } />
         </Routes>
         <Footer />
       </div>

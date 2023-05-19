@@ -131,9 +131,17 @@ class Conteudo extends Component {
 
             <div className={style.help}>
 
-              <h3>Ajuda</h3>
+              <h3>Abra sua reclamação</h3>
 
               <Link to={ logado ? '/open' : '/login'} className={style.help_btn} title='Reclame aqui de uma empresa' >Reclamação de uma empresa</Link>
+
+            </div>
+
+            <div className={style.faq}>
+
+              <h3>Central de Ajuda</h3>
+
+              <Link to='/faq' className={style.faq_btn} title='Perguntas Frequentes'>Perguntas Frequentes</Link>
 
             </div>
 
