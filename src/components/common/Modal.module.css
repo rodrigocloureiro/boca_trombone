@@ -83,16 +83,6 @@
   color: #fff;
 }
 
-/* .modal_footer button {
-  padding: 5px;
-  background-color: #1a73e8;
-  user-select: none;
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  font-size: 16px;
-} */
-
 .modal_footer button {
   padding: 5px;
   border: none;
@@ -114,8 +104,3 @@
 .modal_footer button:hover {
   opacity: 0.8;
 }
-
-/* .modal_footer a:hover,
-.modal_footer button:hover {
-  opacity: 0.8;
-} */

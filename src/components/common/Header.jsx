@@ -11,9 +11,18 @@ class Header extends Component {
   constructor(props) {
     super(props);
   }
+
+  // Abre/Fecha o menu em dispositivos móveis
+  handleMobileMenu = () => {
+    const menu = document.querySelector('#menu');
+    if (menu.classList.contains(`${style.active}`))
+      menu.classList.remove(`${style.active}`);
+    else
+      menu.classList.add(`${style.active}`);
+  };
   
   render() {
-    const { handleMobileMenu, handleSuggestions, event, logado, usuario, logout, definicao, handleNavigateSuggestions } = this.props;
+    const { handleSuggestions, event, logado, usuario, logout, definicao, handleNavigateSuggestions } = this.props;
 
     return (
       <header className={style.header}>
@@ -81,7 +90,7 @@ class Header extends Component {
 
           <div className={style.mobile_menu}>
 
-            <img className={style.menu_image} src={menuImg} alt="Menu" onClick={ handleMobileMenu } />
+            <img className={style.menu_image} src={menuImg} alt="Menu" onClick={ this.handleMobileMenu } />
 
             <div id='menu' className={style.menu}>
 
@@ -92,13 +101,13 @@ class Header extends Component {
       
                     <div className={style.signup_area}>
 
-                      <Link to='/signup' className={style.btn_signup} title='Cadastre-se'>Cadastre-se</Link>
+                      <Link to='/signup' className={style.btn_signup} title='Cadastre-se' onClick={ this.handleMobileMenu }>Cadastre-se</Link>
       
                     </div>
       
                     <div className={style.login_area}>
       
-                      <Link to='/login' className={style.btn_login} title='Login'>Login</Link>
+                      <Link to='/login' className={style.btn_login} title='Login' onClick={ this.handleMobileMenu }>Login</Link>
       
                     </div>
 

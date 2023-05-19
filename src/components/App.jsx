@@ -46,15 +46,6 @@ class App extends Component {
     .then(data => this.setState({mockLogin: data}));
   }
 
-  // Abre/Fecha o menu em dispositivos móveis
-  handleMobileMenu = () => {
-    let menu = document.querySelector('#menu');
-    if (menu.classList.contains('active'))
-      menu.classList.remove('active');
-    else
-      menu.classList.add('active');
-  };
-
   // Limpa as sugestões de busca
   limpaSugestoes = (listaSugestoes) => {
     while (listaSugestoes.firstChild) {
@@ -252,7 +243,7 @@ class App extends Component {
 
     return (
       <div className='grid-container'>
-        <Header handleSuggestions={ this.handleSuggestions } handleMobileMenu= { this.handleMobileMenu } event={ this.handleSearch } logado={ logado } usuario={ usuario } logout={ this.handleLogout } definicao={ definicao } handleNavigateSuggestions={ this.handleNavigateSuggestions } />
+        <Header handleSuggestions={ this.handleSuggestions } event={ this.handleSearch } logado={ logado } usuario={ usuario } logout={ this.handleLogout } definicao={ definicao } handleNavigateSuggestions={ this.handleNavigateSuggestions } />
         <Routes>
           <Route path='/' element={ <Conteudo handleSuggestions={ this.handleSuggestions } event={ this.handleFind } empresas={ empresas } logado={ logado } definicao={ definicao }  handleNavigateSuggestions={ this.handleNavigateSuggestions } /> } />
           <Route path='/login' element={ <Login handleValidation={ this.handleValidation }  /> } />
