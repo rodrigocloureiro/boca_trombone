@@ -34,7 +34,7 @@
   display: flex;
   align-items: center;
   gap: 0 10px;
-  word-break: break-all;
+  word-break: break-word;
 }
 
 .accordion::before,
@@ -53,10 +53,18 @@
   position: relative;
 }
 
+.group_active::before,
+.group_active::after {
+  border: 2px solid #1f64aa !important;
+  background-color: #1f64aa !important;
+  transition: all .3s;
+}
+
 .group::before,
 .group::after {
   content: '';
-  border: 2px solid #1f64aa;
+  border: 2px solid #3d678f80;
+  background-color: #3d678f80;
   height: 12px;
   transform: rotate(45deg);
   position: absolute;
@@ -64,6 +72,7 @@
   right: 6px;
   margin-top: -10px;
   margin-right: 18px;
+  transition: all .3s;
 }
 
 .group::after {

@@ -22,7 +22,7 @@ export default function Faq() {
           <h2>Perguntas Frequentes (FAQ)</h2>
           <div className={style.accordion_area}>
             {faq.map((question, index) => (
-              <div className={style.group} key={index}>
+              <div className={`${style.group} ${itemActive === index && `${style.group_active}`}`} key={index}>
                 <p
                   className={`${style.accordion} ${itemActive === index && `${style.active}`}`}
                   onClick={() => handleAccordion(index)}

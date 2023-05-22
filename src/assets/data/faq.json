@@ -1,16 +1,12 @@
 {
   "faq": [
     {
-      "question": "Como eu faço para publicar uma reclamação?",
-      "answer": ["Para registrar uma reclamação no site, você precisa criar uma conta e fazer login. Depois disso, você pode navegar até a página de registro de reclamações e preencher o formulário com os detalhes da sua reclamação."]
+      "question": "Como faço para publicar uma reclamação?",
+      "answer": ["Para registrar uma reclamação no site, você precisa criar uma conta e fazer login. Depois disso, você pode navegar até a página de registro de reclamações e preencher o formulário com os detalhes da sua reclamação.", "Siga o passo a passo abaixo:", "1- Acesse sua conta;", "2- Clique em ''Reclamação de uma empresa'';", "3- Preencha os campos necessários corretamente;", "4- Verifique e confirme;", "5- Sua reclamação foi publicada."]
     },
     {
       "question": "Como vou ter retorno da empresa?",
       "answer": ["A empresa pode entrar em contato com você de três formas:", "1- Por telefone;", "2- Por e-mail;", "3- Pela plataforma.", "Por isso, é importante ficar atento a estes canais e, é claro, a área do consumidor."]
-    },
-    {
-      "question": "Como faço para excluir uma reclamação?",
-      "answer":[ ""]
     },
     {
       "question": "Recebi uma ligação do Boca no Trombone para resolver o meu caso? São vocês?",
@@ -18,7 +14,15 @@
     },
     {
       "question": "Posso editar ou excluir minha reclamação depois de registrá-la?",
-      "answer": ["Isso pode variar dependendo do site específico de reclamações consumeristas que você está usando. Alguns sites permitem que você edite ou exclua sua reclamação, desde que ela ainda não tenha sido respondida pela empresa. No entanto, é sempre bom verificar as políticas e os recursos específicos do site em relação à edição ou exclusão de reclamações."]
+      "answer": ["Sim, ao entrar na sua página de usuário, você terá as opções tanto de editar, quanto de excluirsua reclamação. No entanto, ressaltamos a importância de se preencher cuidadosamente todas as informações necessárias enquanto efetua a reclamação, evitando possíveis problemas que possam ocorrer."]
+    },
+    {
+      "question": "Como faço para excluir uma reclamação?",
+      "answer":["Para exlucir uma reclamação, siga o passo a passo abaixo:", "1- Acesse sua conta;", "2- Clique em ''Área do Consumidor'';", "3- Clique no botão ''Remover'';", "4- Sua reclamação foi excluída."]
+    },
+    {
+      "question": "Como faço para editar uma reclamação?",
+      "answer":["Para editar uma reclamação, siga o passo a passo abaixo:", "1- Acesse sua conta;", "2- Clique em ''Área do Consumidor'';", "3- Clique no botão ''Editar'';", "4- Faça suas alterações;", "5- Clique em ''Salvar edição'';", "6- Sua edição foi concluída."]
     }
   ]
 }

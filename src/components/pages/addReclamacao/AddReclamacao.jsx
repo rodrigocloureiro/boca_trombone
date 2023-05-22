@@ -77,9 +77,9 @@ class AddReclamacao extends Component {
               {
                 definicao === 'empresa' ?
 
-                <Input type='text' placeholder='Digite o seu CNPJ' id='claimCnpj' autoComplete='off' value={ usuario.cnpj } disable={ true } />
+                <Input type='text' placeholder='Digite o seu CNPJ' id='variableClaim' autoComplete='off' value={ usuario.cnpj } disable={ true } />
                 :
-                <Input type='text' placeholder='Digite o seu sobrenome' id='claimSurname' autoComplete='off' value={ usuario.sobrenome } disable={ false } />
+                <Input type='text' placeholder='Digite o seu sobrenome' id='variableClaim' autoComplete='off' value={ usuario.sobrenome } disable={ false } />
               }
 
               <Input type='text' placeholder='Digite o seu username com @' id='claimUsername' autoComplete='off' value={ usuario.username } disable={ true } />

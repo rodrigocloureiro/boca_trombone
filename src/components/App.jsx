@@ -201,7 +201,7 @@ class App extends Component {
 
     const empresa = document.querySelector('#listCompany').value;
     const nome = document.querySelector('#claimName').value;
-    const sobrenome = document.querySelector('#claimSurname').value;
+    const sobrenome = document.querySelector('#variableClaim').value;
     const username = document.querySelector('#claimUsername').value;
     const claim = document.querySelector('#claim').value;
 
