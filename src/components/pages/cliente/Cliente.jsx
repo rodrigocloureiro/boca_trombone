@@ -31,11 +31,13 @@ class Cliente extends Component {
 
   // Remove a reclamação selecioanada pelo usuário
   handleRemoval = (dado) => {
-    const { event } = this.props;
-    event(dado);
-    this.setState(prevState => ({
-      reclamacoes: prevState.reclamacoes.filter(reclamacao => reclamacao.id !== dado.id)
-    }));
+    if (confirm("Tem certeza que deseja excluir?")) {
+      const { event } = this.props;
+      event(dado);
+      this.setState(prevState => ({
+        reclamacoes: prevState.reclamacoes.filter(reclamacao => reclamacao.id !== dado.id)
+      }));
+    }
   };
 
   // Abre a edição para a reclamação selecionada baseada no id da mesma
@@ -45,14 +47,16 @@ class Cliente extends Component {
 
   // Salva a edição realizada pelo usuário
   handleSaveEdit = (id) => {
-    const { reclamacoes, editedClaim } = this.state;
-    const claimsUpdated = reclamacoes.map(item => {
-      if(item.id === id)
-        item.reclamacao = editedClaim;
-      return item;
-    });
+    if (confirm("Tem certeza que deseja editar?")) {
+      const { reclamacoes, editedClaim } = this.state;
+      const claimsUpdated = reclamacoes.map(item => {
+        if(item.id === id)
+          item.reclamacao = editedClaim;
+        return item;
+      });
 
-    this.setState({reclamacoes: claimsUpdated, editId: null});
+      this.setState({reclamacoes: claimsUpdated, editId: null});
+  }
   };
   
   render() {
@@ -89,7 +93,15 @@ class Cliente extends Component {
                         </> ) : (
                           <>
                             <button onClick={ () => this.handleSaveEdit(dado.id) }>Salvar edição</button>
-                            <button onClick={ () => this.setState({editId: null}) }>Cancelar edição</button>
+                            <button
+                              onClick={ () =>
+                                confirm(
+                                  "Tem certeza que deseja cancelar a edição?"
+                                ) && this.setState({editId: null})
+                              }
+                            >
+                              Cancelar edição
+                            </button>
                           </>
                         )
                       }
