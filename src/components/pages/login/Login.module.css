@@ -39,6 +39,16 @@
 .ipt_pass {
   margin-bottom: 20px;
   border-bottom: 1px solid #6b6b6b;
+  display: flex;
+}
+
+.show_password,
+.hide_password {
+  cursor: pointer;
+}
+
+.hide_password {
+  display: none;
 }
 
 :is(.ipt_login input, .ipt_pass input)::placeholder {

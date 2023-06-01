@@ -9,6 +9,9 @@ function Login({ handleValidation }) {
   const loginWarningRef = useRef(); // label de aviso do login
   const passWarningRef = useRef(); // label de aviso do password
   const failedLoginRef = useRef(); // label de aviso login não sucedido
+  const inputPasswordRef = useRef(); // input password
+  const showPasswordRef = useRef(); // botao para exibir senha
+  const hidePasswordRef = useRef(); // botao para ocultar senha
   
   // Adiciona erro caso não preenchido corretamente
   const handleInputValidation = (e, warning, regex) => {
@@ -34,6 +37,18 @@ function Login({ handleValidation }) {
   const handlePassword = (e, regex) => {
     setPassword(e.target.value);
     handleInputValidation(e, passWarningRef, regex);
+  };
+
+  const handleViewPassword = () => {
+     if(inputPasswordRef.current.type === 'password') {
+      inputPasswordRef.current.type = 'text';
+      showPasswordRef.current.style.display = 'none';
+      hidePasswordRef.current.style.display = 'block';
+     } else {
+      inputPasswordRef.current.type = 'password'
+      showPasswordRef.current.style.display = 'block';
+      hidePasswordRef.current.style.display = 'none';
+     }
   };
 
   return (
@@ -92,7 +107,12 @@ function Login({ handleValidation }) {
                       maxLength="16"
                       required={true}
                       event={(e) => handlePassword(e, /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)}
+                      inputRef={inputPasswordRef}
                     />
+
+                    <i className={`bi bi-eye ${style.show_password}`} onClick={handleViewPassword} ref={showPasswordRef}></i>
+
+                    <i className={`bi bi-eye-slash ${style.hide_password}`} onClick={handleViewPassword} ref={hidePasswordRef}></i>
                     
                   </div>
 
