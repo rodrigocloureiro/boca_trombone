@@ -243,6 +243,8 @@ ul.rank_best_percent li:last-child {
   .utilities_area {
     flex-direction: row;
     row-gap: 0;
+    flex-wrap: wrap;
+    gap: 30px;
   }
 
   .client_btn,
