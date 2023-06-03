@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
 import style from './Empresa.module.css';
-import { Component } from 'react';
+import { Component, createRef } from 'react';
+import Modal from '../../common/Modal';
 
 class Empresa extends Component {
   constructor(props) {
@@ -10,9 +10,9 @@ class Empresa extends Component {
       logo: '',
       resp: false,
       reclamacaoSelecionada: [],
-      confirm: false,
-      answerValue: ''
+      answerValue: '',
     };
+    this.modalRef = createRef();
   }
 
   // Busca as reclamações e logotipo referentes a empresa logada ao montar o componente
@@ -41,30 +41,30 @@ class Empresa extends Component {
     this.setState({ reclamacaoSelecionada: dado });
   };
 
-  // Caso a resposta seja preenchida corretamente, exibe o modal para confirmação, caso não, adiciona o erro em questão
-  handleSubmitAnswer = (e) => {
-    e.preventDefault();
-    const answerValue = document.querySelector('#answer').value;
-    if(answerValue.length > 0) {
-      document.querySelector("#myModal").style.display = "block";
-    } else {
-      document.querySelector('#answer').classList.add(`${style.warning}`);
-    }
-  };
-
   // Adiciona a resposta da empresa à reclamação selecionada
   handleAnswer = (param, company) => {
+    const { answerValue } = this.state;
     const { empresas } = this.props;
     const data = new Date();
 
-    const compAnswer = document.querySelector('#answer').value;
     empresas.map(item => {
       if(item.nome === company.nome)
         item.reclamacoes.forEach(reclamacao => {
           if(reclamacao.id === param.id)
-            reclamacao.resposta = {texto: compAnswer, data: data};
+            reclamacao.resposta = {texto: answerValue, data: data};
         });
     });
+  };
+
+  // Exibe o modal caso os campos estejam preenchidos corretamente, caso não, exibe o erro em questão que não permite envio
+  handleShowModal = (e) => {
+    e.preventDefault();
+    const { answerValue } = this.state;
+    if(answerValue.length > 0) {
+      this.modalRef.current.style.display = "block";
+    } else {
+      this.state.answerValue === '' && document.querySelector("#answer").classList.add(`${style.warning}`); // exibe o erro
+    }
   };
   
   render() {
@@ -73,34 +73,8 @@ class Empresa extends Component {
 
     return (
       <main>
-        <div id="myModal" className={ style.modal }>
-          <div className={ style.modal_content }>
-            <div className={ style.modal_header }>
-              {confirm ? (
-                <>
-                  <h2>Resposta enviada!</h2>
-                  <Link to='/' role='button' className={ style.modal_button } onClick={ () => this.handleAnswer(this.state.reclamacaoSelecionada, this.props.usuario) }>Voltar para o início</Link>
-                </>
-               ) : (<h2>Você confirma os dados?</h2>)
-              }
-            </div>
-            {!confirm &&
-              <>
-                <div className={ style.modal_body }>
-                  <p>Reclamação: { reclamacaoSelecionada.reclamacao }</p>
-
-                  <p>
-                    Resposta: { answerValue }
-                  </p>
-                </div>
-                <div className={ style.modal_footer }>
-                  <button className={ style.modal_button } onClick={ () => this.setState({confirm: true}) }>Confirmar e Enviar</button>
-                  <button className={ `${style.modal_button} ${style.modal_button__edit}` } onClick={ () => document.querySelector("#myModal").style.display = "none" }>Voltar e Editar</button>
-                </div>
-              </>
-            }
-          </div>
-        </div>
+        
+        <Modal headerText='Você confirma os dados?' claim={ reclamacaoSelecionada } answer={ answerValue } event={ this.handleAnswer } usuario={ usuario } modalRef={this.modalRef} />
 
         {
           !resp ? (
@@ -167,7 +141,7 @@ class Empresa extends Component {
 
                   <div className={ style.answer_btns_area }>
 
-                    <button className={ style.answer_btn } onClick={ this.handleSubmitAnswer }>Enviar resposta</button>
+                    <button className={ style.answer_btn } onClick={ this.handleShowModal }>Enviar resposta</button>
 
                   </div>
 

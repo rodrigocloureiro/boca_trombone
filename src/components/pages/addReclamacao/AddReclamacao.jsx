@@ -42,7 +42,7 @@ class AddReclamacao extends Component {
     return (
       <main>
 
-        <Modal claim={ this.state.claim } company={ this.state.company } event={ event } modalRef={this.modalRef} />
+        <Modal headerText='Você confirma os dados?' claim={ this.state.claim } company={ this.state.company } event={ event } modalRef={this.modalRef} />
 
         <div className={ style.container }>
 
