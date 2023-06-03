@@ -2,30 +2,29 @@ import { useNavigate } from 'react-router-dom';
 import style from './Modal.module.css';
 import { useState } from 'react';
 
-function Modal({ claim, company, event }) {
+function Modal({ claim, company, event, modalRef }) {
   const [ status, setStatus ] = useState(false);
   const navigate = useNavigate();
 
   // Fecha o modal
   function handleShowModal() {
-    const modal = document.querySelector("#myModal");
-    modal.style.display = "none";
+    modalRef.current.style.display = "none";
   }
 
   // Envia o usuário para a página principal 1 segundo após concluir o envio da reclamação
   function handleSubmit() {
     setStatus(true);
     setTimeout( () => {
-      event();
-      navigate('/');
+      event(); // evento recebido por props
+      navigate('/'); // Redireciona para a Home
     }, 1000);
   }
 
   return (
-    <div id="myModal" className={ style.modal }>
+    <div ref={ modalRef } className={ style.modal }>
       <div className={ style.modal_content }>
         <div className={ style.modal_header }>
-          <span className={ style.close }>&times;</span>
+          <span className={ style.close } onClick={handleShowModal}>&times;</span>
 
           <h2>Você confirma os dados?</h2>
         </div>

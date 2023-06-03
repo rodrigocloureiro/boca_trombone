@@ -2,7 +2,7 @@ import Input from '../../common/Input';
 import Modal from '../../common/Modal';
 import { Link } from 'react-router-dom';
 import style from './AddReclamacao.module.css';
-import { Component } from 'react';
+import { Component, createRef } from 'react';
 
 class AddReclamacao extends Component {
   constructor(props) {
@@ -11,6 +11,7 @@ class AddReclamacao extends Component {
       claim: '',
       company: ''
     };
+    this.modalRef = createRef();
   }
 
   // Remove o aviso de empresa não selecionada
@@ -27,14 +28,8 @@ class AddReclamacao extends Component {
   handleShowModal = (e) => {
     e.preventDefault();
     if(this.state.claim.length > 0 && this.state.company.length > 0) {
-      const modal = document.querySelector("#myModal");
-      const span = document.querySelector("span");
+      this.modalRef.current.style.display = "block";
       
-      modal.style.display = "block";
-      
-      span.onclick = function() {
-        modal.style.display = "none";
-      }
     } else {
       this.state.claim === '' ? document.querySelector("#claim").classList.add(`${style.warning}`) : null;
       this.state.company === '' ? document.querySelector("#listCompany").classList.add(`${style.warning}`) : null;
@@ -47,7 +42,7 @@ class AddReclamacao extends Component {
     return (
       <main>
 
-        <Modal claim={ this.state.claim } company={ this.state.company } event={ event } />
+        <Modal claim={ this.state.claim } company={ this.state.company } event={ event } modalRef={this.modalRef} />
 
         <div className={ style.container }>
 
