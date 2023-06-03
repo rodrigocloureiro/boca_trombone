@@ -1,6 +1,8 @@
-import style from './Modal.module.css';
+import style from './SimpleModal.module.css';
 
 function Modal({ modalRef, claim, remove, edit }) {
+  const message = claim.action === 'remove' ? 'Você confirma a exclusão?' : claim.action === 'edit' ? 'Você confirma a edição?' : 'Você confirma o cancelamento da edição?';
+
   // Fecha o modal
   function handleShowModal() {
     modalRef.current.style.display = "none";
@@ -23,7 +25,7 @@ function Modal({ modalRef, claim, remove, edit }) {
         <div className={ style.modal_header }>
           <span className={ style.close } onClick={handleShowModal}>&times;</span>
 
-          <h2>Você confirma a ação?</h2>
+          <h2>{message}</h2>
         </div>
 
         <div className={ style.modal_footer }>
