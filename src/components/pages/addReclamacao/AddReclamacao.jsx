@@ -84,7 +84,7 @@ class AddReclamacao extends Component {
                 this.handleClaimValue();
               }} />
 
-              <Link to='/' role='button' className={ style.claim_btn } onClick={ this.handleShowModal }>Enviar reclamação</Link>
+              <Link to='/' role='button' className={ style.claim_btn } onClick={ this.handleShowModal } id='btn_add_claim'>Enviar reclamação</Link>
               
             </form>
             

@@ -29,7 +29,7 @@ function Modal({ modalRef, claim, remove, edit }) {
         </div>
 
         <div className={ style.modal_footer }>
-          <button onClick={ handleSubmit }>Confirmar</button>
+          <button onClick={ handleSubmit } id='confirm'>Confirmar</button>
           <button onClick={ handleShowModal }>Voltar</button>
         </div>
       </div>

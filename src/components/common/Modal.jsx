@@ -48,8 +48,8 @@ function Modal({ headerText, claim, company, answer, event, usuario, modalRef })
         <div className={style.modal_footer}>
           {!status ? (
             <>
-              <button onClick={handleSubmit}>Confirmar e Enviar</button>
-              <button onClick={handleShowModal}>Voltar e Editar</button>
+              <button onClick={handleSubmit} id="confirm">Confirmar e Enviar</button>
+              <button onClick={handleShowModal} id="cancel">Voltar e Editar</button>
             </>
           ) : (
             <p>Envio realizado com sucesso!</p>

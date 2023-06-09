@@ -106,6 +106,7 @@ class Cliente extends Component {
                       </p>
                     ) : (
                       <textarea
+                        data-cy="edit_claim"
                         value={this.state.editedClaim}
                         className={style.edit_claim}
                         onChange={(e) =>
@@ -129,6 +130,7 @@ class Cliente extends Component {
                             });
                             this.handleShowModal();
                           }}
+                          id="remove"
                         >
                           Remover ❌
                         </button>

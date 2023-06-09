@@ -80,7 +80,7 @@ class Header extends Component {
                   
                   <BsBoxArrowInRight style={{ fontSize: 24 }} />
 
-                  <p>Sair</p>
+                  <p id='logout'>Sair</p>
                   
                 </Link>
                 

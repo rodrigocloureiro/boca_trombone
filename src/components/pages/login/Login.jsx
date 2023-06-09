@@ -124,7 +124,7 @@ function Login({ handleValidation }) {
 
                 <div className={ style.btn_login }>
                   
-                  <Link to='/' onClick={ (e) => handleValidation(e, login, password) }>Login</Link>
+                  <Link to='/' onClick={ (e) => handleValidation(e, login, password) } id='btn_login'>Login</Link>
                 
                 </div>
 
