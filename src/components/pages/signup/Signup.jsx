@@ -234,7 +234,7 @@ function Signup({ empresas, mockLogin }) {
       
               </div>
 
-              <label id='pass__sign_warning' className={style.pass__sign_warning}>8 a 16 caracteres, incluindo pelo menos um símbolo, letra maiúscula e número</label>
+              <label id='pass__sign_warning' className={style.pass__sign_warning}>8 a 16 caracteres, incluindo pelo menos um símbolo (@, $, !, %, *, ?, &), letra maiúscula e número</label>
       
               <div className={ style.btn_login }>
       
