@@ -116,7 +116,7 @@ function Login({ handleValidation }) {
                     
                   </div>
 
-                  <label id='pass_warning' ref={passWarningRef} className={ style.pass_warning }>8 a 16 caracteres, incluindo pelo menos um símbolo, letra maiúscula e número</label>
+                  <label id='pass_warning' ref={passWarningRef} className={ style.pass_warning }>8 a 16 caracteres, incluindo pelo menos um símbolo (@, $, !, %, *, ?, &), letra maiúscula e número</label>
                   
                 </div>
 
