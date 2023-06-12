@@ -21,7 +21,7 @@ describe('testes envolvendo login', () => {
     cy.login({username: 'luizjr77', password: 'abracadabra'}) // realiza a chamada do custom command e tenta efetuar login
 
     cy.get('#login_warning').should('contain', '3 a 15 caracteres. Deve começar com @') // verifica se o aviso de username inválido foi exibido
-    cy.get('#pass_warning').should('contain', '8 a 16 caracteres, incluindo pelo menos um símbolo, letra maiúscula e número') // verifica se o aviso de password inválida foi exibido
+    cy.get('#pass_warning').should('contain', '8 a 16 caracteres, incluindo pelo menos um símbolo (@, $, !, %, *, ?, &), letra maiúscula e número') // verifica se o aviso de password inválida foi exibido
     cy.get('#general_warning').should('contain', 'Login ou senha incorretos') // verifica se o aviso referente a falha no login foi exibido
   })
 })
