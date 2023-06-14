@@ -76,7 +76,7 @@ class App extends Component {
         selected += 1;
       } else if(e.key === 'ArrowUp') {
         selected === -1 ? selected = 0 : null;
-        selected = (selected -1 + el.length) % el.length
+        selected = (selected -1 + el.length) % el.length;
       } else {
         if(e.target.id === 'search') {
           this.state.empresas.some(item => item.nome.toLowerCase().includes(e.target.value.toLowerCase())) ? (document.querySelector('#search').value = el[selected].textContent, this.handleSearch()) : null;
