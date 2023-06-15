@@ -23,6 +23,14 @@
     {
       "question": "Como faço para editar uma reclamação?",
       "answer":["Para editar uma reclamação, siga o passo a passo abaixo:", "1- Acesse sua conta;", "2- Clique em ''Área do Consumidor'';", "3- Clique no botão ''Editar'';", "4- Faça suas alterações;", "5- Clique em ''Salvar edição'';", "6- Sua edição foi concluída."]
+    },
+    {
+      "question": "Como faço para responder uma reclamação?",
+      "answer":["Para responder uma reclamação, siga o passo a passo abaixo:", "1- Acesse sua conta;", "2- Clique em ''Área da Empresa'';", "3- Clique no botão ''Responder reclamação'' ou clique na reclamação;", "4- Escreva sua resposta;", "5- Clique em ''Enviar resposta'';", "6- Clique em ''Confirmar e enviar'';", "7- Sua resposta foi adicionada."]
+    },
+    {
+      "question": "Como faço para fechar uma reclamação?",
+      "answer":["Para fechar uma reclamação, siga o passo a passo abaixo:", "1- Acesse sua conta;", "2- Clique em ''Área da Empresa'';", "3- Clique no botão ''Fechar reclamação'';", "4- A reclamação foi fechada."]
     }
   ]
 }
