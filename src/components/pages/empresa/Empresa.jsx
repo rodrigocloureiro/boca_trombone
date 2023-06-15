@@ -109,7 +109,10 @@ class Empresa extends Component {
                       }
                       {
                         dado.status !== 'Resolvida' &&
-                        <button key={ `btn${ dado.id }` } className={ style.close_claim } onClick={ () => this.handleStatus(dado) }>Fechar reclamação</button>
+                        <div key={ `btn${ dado.id }` }>
+                          <button className={ style.close_claim } onClick={ () => this.handleStatus(dado) }>Fechar reclamação</button>
+                          <button className={ style.answer_claim } onClick={ () => this.handleResp(dado) }>Responder reclamação</button>
+                        </div>
                       }
                     </li>
                   ))

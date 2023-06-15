@@ -126,8 +126,10 @@
   column-gap: 10px;
 }
 
-.close_claim {
+.close_claim,
+.answer_claim {
   padding: 5px 10px;
+  margin: 0 5px;
   border: 1px solid #3e6990;
   border-radius: 10px;
   background-color: transparent;
@@ -136,7 +138,8 @@
   transition: .5s;
 }
 
-.close_claim:hover {
+.close_claim:hover,
+.answer_claim:hover {
   background-color: #3e6990;
   color: #fff;
   font-weight: bold;
