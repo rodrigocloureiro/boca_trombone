@@ -94,7 +94,7 @@ class Empresa extends Component {
               
               <ul className={ style.claims_list }>
                 {
-                  reclamacoes.map(dado => (
+                  reclamacoes.map((dado, index) => (
                     <li key={ dado.id } onClick={ () => this.handleResp(dado) }>
                       <p className={ style.claim }>{ dado.status === 'Aberta' ? (<>❗</>) : (<>✅</>) } { dado.reclamacao }</p>
                       <p>{ dado.username }</p>
@@ -110,7 +110,7 @@ class Empresa extends Component {
                       {
                         dado.status !== 'Resolvida' &&
                         <div key={ `btn${ dado.id }` }>
-                          <button className={ style.close_claim } onClick={ () => this.handleStatus(dado) }>Fechar reclamação</button>
+                          <button id={`close_claim_${index}`} className={ style.close_claim } onClick={ () => this.handleStatus(dado) }>Fechar reclamação</button>
                           <button className={ style.answer_claim } onClick={ () => this.handleResp(dado) }>Responder reclamação</button>
                         </div>
                       }
