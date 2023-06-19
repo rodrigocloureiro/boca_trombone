@@ -35,14 +35,14 @@ class App extends Component {
 
   // Busca e armazena os dados das empresas em um arquivo JSON via fetch
   handleEmpresas() {
-    fetch('src/assets/data/data.json')
+    fetch('../src/assets/data/data.json')
     .then(response => response.json())
     .then(data => this.setState({empresas: data, isDataLoaded: true}));
   }
 
   // Busca e armazena os dados de login em um arquivo JSON via fetch
   handleMockLogin() {
-    fetch('src/assets/data/mockLogin.json')
+    fetch('../src/assets/data/mockLogin.json')
     .then(response => response.json())
     .then(data => this.setState({mockLogin: data}));
   }
