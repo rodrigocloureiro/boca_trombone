@@ -10,8 +10,7 @@ export default function Faq() {
   };
 
   useLayoutEffect(() => {
-    {/*fetch('src/assets/data/faq.json')*/}
-    fetch('https://api.npoint.io/c6939b9a7fb6e1dcf351')
+    fetch('src/assets/data/faq.json')
     .then(response => response.json())
     .then(data => setFaq(data.faq));
   }, []);
